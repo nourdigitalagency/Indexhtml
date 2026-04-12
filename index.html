@@ -436,141 +436,137 @@
       transition: all 0.2s;
     }
     .modal-close-btn:hover { background: rgba(46,185,240,0.2); color: white; }
+
+    /* ── Nour N Logo Mark ── */
+    .nour-logo-mark {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .nour-logo-mark::before {
+      content: '';
+      position: absolute;
+      inset: -5px;
+      border-radius: 14px;
+      background: radial-gradient(circle at 50% 40%, rgba(46,185,240,0.35) 0%, rgba(46,185,240,0.08) 55%, transparent 75%);
+      filter: blur(6px);
+      animation: nour-breathe 3s ease-in-out infinite;
+    }
+    .nour-logo-mark::after {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: 11px;
+      background: radial-gradient(circle at 50% 20%, rgba(255,255,255,0.18) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    @keyframes nour-breathe {
+      0%, 100% { opacity: 0.7; transform: scale(1); }
+      50%       { opacity: 1;   transform: scale(1.08); }
+    }
+    .nour-n-svg {
+      position: relative;
+      z-index: 1;
+      filter: drop-shadow(0 0 6px rgba(46,185,240,0.9)) drop-shadow(0 0 14px rgba(46,185,240,0.5));
+      transition: filter 0.3s;
+    }
+    a:hover .nour-n-svg {
+      filter: drop-shadow(0 0 8px rgba(255,255,255,0.8)) drop-shadow(0 0 20px rgba(46,185,240,0.9)) drop-shadow(0 0 40px rgba(46,185,240,0.4));
+    }
+    .nour-logo-mark-sm::before { inset: -3px; border-radius: 10px; filter: blur(4px); }
+
+    /* ── Rotating Headline spans ── */
+    .rw-span {
+      display: inline-block;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
   </style>
 
-```
-/* ── Nour 'N' Logo Mark ── */
-.nour-logo-mark {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-/* Outer glow ring — pulses slowly like emitted light */
-.nour-logo-mark::before {
-  content: '';
-  position: absolute;
-  inset: -5px;
-  border-radius: 14px;
-  background: radial-gradient(circle at 50% 40%, rgba(46,185,240,0.35) 0%, rgba(46,185,240,0.08) 55%, transparent 75%);
-  filter: blur(6px);
-  animation: nour-breathe 3s ease-in-out infinite;
-}
-/* Inner glow corona */
-.nour-logo-mark::after {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: 11px;
-  background: radial-gradient(circle at 50% 20%, rgba(255,255,255,0.18) 0%, transparent 60%);
-  pointer-events: none;
-}
-@keyframes nour-breathe {
-  0%, 100% { opacity: 0.7; transform: scale(1); }
-  50%       { opacity: 1;   transform: scale(1.08); }
-}
-
-/* The SVG 'N' itself */
-.nour-n-svg {
-  position: relative;
-  z-index: 1;
-  filter: drop-shadow(0 0 6px rgba(46,185,240,0.9))
-          drop-shadow(0 0 14px rgba(46,185,240,0.5));
-  transition: filter 0.3s;
-}
-a:hover .nour-n-svg {
-  filter: drop-shadow(0 0 8px rgba(255,255,255,0.8))
-          drop-shadow(0 0 20px rgba(46,185,240,0.9))
-          drop-shadow(0 0 40px rgba(46,185,240,0.4));
-}
-
-/* Footer mini version */
-.nour-logo-mark-sm::before {
-  inset: -3px;
-  border-radius: 10px;
-  filter: blur(4px);
-}
-```
-
-  </style>
 </head>
 <body>
 
 <!-- ═══════════════════════════════════════ NAV ═══════════════════════════════════════ -->
 
 <nav class="nav-glass fixed top-0 left-0 right-0 z-50">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-    <a href="#" class="flex items-center gap-3">
-      <!-- Nour 'N' Logo Mark -->
-      <div class="nour-logo-mark w-9 h-9 rounded-xl" style="background: linear-gradient(145deg, #0d1e30 0%, #071520 100%); border: 1px solid rgba(46,185,240,0.35);">
-        <svg class="nour-n-svg" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Subtle inner highlight bar at top -->
-          <rect x="9" y="9" width="18" height="1.5" rx="0.75" fill="rgba(255,255,255,0.12)"/>
-          <!-- The N strokes — crafted from 3 clean paths -->
-          <!-- Left vertical -->
-          <rect x="9.5" y="9" width="3" height="18" rx="1.2" fill="url(#nGradL)"/>
-          <!-- Diagonal slash -->
-          <path d="M12.5 9.5 L23.5 26.5" stroke="url(#nGradD)" stroke-width="2.8" stroke-linecap="round"/>
-          <!-- Right vertical -->
-          <rect x="23.5" y="9" width="3" height="18" rx="1.2" fill="url(#nGradR)"/>
-          <!-- Apex light dot — represents nour (light) -->
-          <circle cx="18" cy="10.5" r="1.4" fill="white" opacity="0.85"/>
-          <defs>
-            <linearGradient id="nGradL" x1="11" y1="9" x2="11" y2="27" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
-              <stop offset="100%" stop-color="#2EB9F0" stop-opacity="0.8"/>
-            </linearGradient>
-            <linearGradient id="nGradR" x1="25" y1="9" x2="25" y2="27" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#2EB9F0" stop-opacity="0.8"/>
-              <stop offset="100%" stop-color="#ffffff" stop-opacity="0.95"/>
-            </linearGradient>
-            <linearGradient id="nGradD" x1="12.5" y1="9.5" x2="23.5" y2="26.5" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
-              <stop offset="100%" stop-color="#2EB9F0" stop-opacity="0.75"/>
-            </linearGradient>
-          </defs>
-        </svg>
-      </div>
-      <span class="font-display font-800 text-white text-xl tracking-tight">Nour<span style="color:var(--electric)">Digital</span></span>
-    </a>
+  <div class="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between">
 
 ```
-<!-- Desktop Nav -->
-<div class="desktop-nav hidden md:flex items-center gap-8">
+<!-- Logo -->
+<a href="#" class="flex items-center gap-3" style="text-decoration:none;">
+  <div class="nour-logo-mark w-9 h-9 rounded-xl" style="background: linear-gradient(145deg, #0d1e30 0%, #071520 100%); border: 1px solid rgba(46,185,240,0.35);">
+    <svg class="nour-n-svg" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="9" y="9" width="18" height="1.5" rx="0.75" fill="rgba(255,255,255,0.12)"/>
+      <rect x="9.5" y="9" width="3" height="18" rx="1.2" fill="url(#nGradL)"/>
+      <path d="M12.5 9.5 L23.5 26.5" stroke="url(#nGradD)" stroke-width="2.8" stroke-linecap="round"/>
+      <rect x="23.5" y="9" width="3" height="18" rx="1.2" fill="url(#nGradR)"/>
+      <circle cx="18" cy="10.5" r="1.4" fill="white" opacity="0.85"/>
+      <defs>
+        <linearGradient id="nGradL" x1="11" y1="9" x2="11" y2="27" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+          <stop offset="100%" stop-color="#2EB9F0" stop-opacity="0.8"/>
+        </linearGradient>
+        <linearGradient id="nGradR" x1="25" y1="9" x2="25" y2="27" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#2EB9F0" stop-opacity="0.8"/>
+          <stop offset="100%" stop-color="#ffffff" stop-opacity="0.95"/>
+        </linearGradient>
+        <linearGradient id="nGradD" x1="12.5" y1="9.5" x2="23.5" y2="26.5" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+          <stop offset="100%" stop-color="#2EB9F0" stop-opacity="0.75"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+  <span class="font-display font-800 text-white text-xl tracking-tight">Nour<span style="color:var(--electric)">Digital</span></span>
+</a>
+
+<!-- Desktop Nav — far right -->
+<div class="hidden md:flex items-center gap-8 ml-auto">
   <a href="#services" class="text-sm text-slate-400 hover:text-white transition-colors font-body">Services</a>
   <a href="#pricing" class="text-sm text-slate-400 hover:text-white transition-colors font-body">Pricing</a>
   <a href="#local" class="text-sm text-slate-400 hover:text-white transition-colors font-body">About</a>
   <a href="#contact" class="btn-primary px-5 py-2.5 rounded-lg text-sm inline-block">Get a Quote</a>
 </div>
 
-<!-- Mobile Hamburger — hidden on desktop via CSS -->
-<button id="menu-toggle" class="md:hidden text-slate-400 hover:text-white p-2 rounded-lg transition-colors" style="border: 1px solid rgba(46,185,240,0.2);" aria-label="Open menu">
-  <svg id="icon-menu" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-  <svg id="icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+<!-- Mobile Hamburger — pinned to top-right on mobile -->
+<button id="menu-toggle"
+  class="md:hidden flex items-center justify-center w-10 h-10 rounded-xl text-slate-300 hover:text-white transition-all"
+  style="background: rgba(13,20,32,0.8); border: 1px solid rgba(46,185,240,0.3); margin-right: 2px;"
+  aria-label="Toggle navigation">
+  <svg id="icon-menu" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+    <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+  </svg>
+  <svg id="icon-close" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="display:none;">
+    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+  </svg>
 </button>
 ```
 
   </div>
 
-  <!-- Mobile Menu -->
+  <!-- Mobile Dropdown Menu -->
 
-  <div id="mobile-menu" class="border-t px-6 py-5 space-y-1" style="display:none; border-color: var(--border); background: rgba(8,12,18,0.98);">
-    <a href="#services" class="mobile-nav-link flex items-center gap-3 text-slate-300 hover:text-white py-3 px-3 rounded-lg hover:bg-white/5 transition-all font-body">
+  <div id="mobile-menu" class="border-t px-5 py-4 space-y-1" style="display:none; border-color:rgba(46,185,240,0.15); background:rgba(8,12,18,0.98); backdrop-filter:blur(20px);">
+    <a href="#services" class="mobile-nav-link flex items-center gap-3 text-slate-300 hover:text-white py-3 px-3 rounded-xl hover:bg-white/5 transition-all font-body text-base">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
       Services
     </a>
-    <a href="#pricing" class="mobile-nav-link flex items-center gap-3 text-slate-300 hover:text-white py-3 px-3 rounded-lg hover:bg-white/5 transition-all font-body">
+    <a href="#pricing" class="mobile-nav-link flex items-center gap-3 text-slate-300 hover:text-white py-3 px-3 rounded-xl hover:bg-white/5 transition-all font-body text-base">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
       Pricing
     </a>
-    <a href="#local" class="mobile-nav-link flex items-center gap-3 text-slate-300 hover:text-white py-3 px-3 rounded-lg hover:bg-white/5 transition-all font-body">
+    <a href="#local" class="mobile-nav-link flex items-center gap-3 text-slate-300 hover:text-white py-3 px-3 rounded-xl hover:bg-white/5 transition-all font-body text-base">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
       About Us
     </a>
-    <div class="pt-3 pb-1">
-      <a href="#contact" class="btn-primary w-full py-3 rounded-xl text-sm font-display font-700 flex items-center justify-center gap-2">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+    <a href="#contact" class="mobile-nav-link flex items-center gap-3 text-slate-300 hover:text-white py-3 px-3 rounded-xl hover:bg-white/5 transition-all font-body text-base">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      Contact Us
+    </a>
+    <div class="pt-2 pb-1">
+      <a href="#contact" class="mobile-nav-link btn-primary w-full py-3 rounded-xl text-sm font-display font-700 flex items-center justify-center gap-2">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
         Get a Free Quote
       </a>
     </div>
@@ -1107,22 +1103,16 @@ a:hover .nour-n-svg {
       </div>
     </div>
 
-    <!-- Social Links -->
+    <!-- Social Links — Instagram, Facebook, TikTok only -->
     <div class="flex gap-3 mt-8">
-      <a href="#" aria-label="Facebook" class="w-10 h-10 rounded-lg flex items-center justify-center text-slate-400 hover:text-white hover:border-blue-400 transition-all" style="border: 1px solid var(--border);">
+      <a href="#" aria-label="Facebook" class="w-10 h-10 rounded-lg flex items-center justify-center text-slate-400 hover:text-white transition-all" style="border: 1px solid var(--border);">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
       </a>
       <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-lg flex items-center justify-center text-slate-400 hover:text-white transition-all" style="border: 1px solid var(--border);">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
       </a>
-      <a href="#" aria-label="LinkedIn" class="w-10 h-10 rounded-lg flex items-center justify-center text-slate-400 hover:text-white transition-all" style="border: 1px solid var(--border);">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-      </a>
       <a href="#" aria-label="TikTok" class="w-10 h-10 rounded-lg flex items-center justify-center text-slate-400 hover:text-white transition-all" style="border: 1px solid var(--border);">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
-      </a>
-      <a href="#" aria-label="Google" class="w-10 h-10 rounded-lg flex items-center justify-center text-slate-400 hover:text-white transition-all" style="border: 1px solid var(--border);">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.2 8.2 0 0 0 4.79 1.53V6.78a4.85 4.85 0 0 1-1.02-.09z"/></svg>
       </a>
     </div>
   </div>
@@ -1237,11 +1227,11 @@ a:hover .nour-n-svg {
     <h3>4. Third-Party Services</h3>
     <p>We use Stripe for payment processing. Their privacy practices are governed by Stripe's own Privacy Policy. We may use Google Analytics to understand site traffic — this data is anonymized and aggregated.</p>
     <h3>5. Your Rights</h3>
-    <p>You may request access to, correction of, or deletion of your personal data at any time by contacting us at <span style="color:#2EB9F0">hello@nourdigital.com</span>. We will respond within 30 days.</p>
+    <p>You may request access to, correction of, or deletion of your personal data at any time by contacting us at <span style="color:#2EB9F0"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4c24292020230c2223393e28252b25382d20622f2321">[email&#160;protected]</a></span>. We will respond within 30 days.</p>
     <h3>6. Cookies</h3>
     <p>Our website may use essential cookies to function properly. No tracking or advertising cookies are used without your consent.</p>
     <h3>7. Contact Us</h3>
-    <p>Questions about this policy? Reach us at <span style="color:#2EB9F0">hello@nourdigital.com</span> or (412) 555-0123. We're happy to help.</p>
+    <p>Questions about this policy? Reach us at <span style="color:#2EB9F0"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4129242d2d2e012f2e34332528262835202d6f222e2c">[email&#160;protected]</a></span> or (412) 555-0123. We're happy to help.</p>
   </div>
 </div>
 
@@ -1270,155 +1260,139 @@ a:hover .nour-n-svg {
     <h3>6. Limitation of Liability</h3>
     <p>Nour Digital shall not be liable for indirect, incidental, or consequential damages. Our total liability shall not exceed the amount paid for the specific service in the prior 3 months.</p>
     <h3>7. Contact</h3>
-    <p>For questions about these terms, contact us at <span style="color:#2EB9F0">hello@nourdigital.com</span> or (412) 555-0123.</p>
+    <p>For questions about these terms, contact us at <span style="color:#2EB9F0"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="97fff2fbfbf8d7f9f8e2e5f3fef0fee3f6fbb9f4f8fa">[email&#160;protected]</a></span> or (412) 555-0123.</p>
   </div>
 </div>
 
 <!-- ═══════════════════════════════════════ SCRIPTS ═══════════════════════════════════════ -->
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 
-  // ── Mobile Menu Toggle ──
-  var menuToggle = document.getElementById('menu-toggle');
-  var mobileMenu = document.getElementById('mobile-menu');
-  var iconMenu   = document.getElementById('icon-menu');
-  var iconClose  = document.getElementById('icon-close');
-  var menuOpen   = false;
+document.addEventListener(‘DOMContentLoaded’, function () {
 
-  if (menuToggle && mobileMenu) {
-    menuToggle.addEventListener('click', function (e) {
-      e.stopPropagation();
-      menuOpen = !menuOpen;
-      mobileMenu.style.display = menuOpen ? 'block' : 'none';
-      if (iconMenu)  iconMenu.style.display  = menuOpen ? 'none'  : 'block';
-      if (iconClose) iconClose.style.display = menuOpen ? 'block' : 'none';
-    });
-  }
-  document.querySelectorAll('.mobile-nav-link').forEach(function (link) {
-    link.addEventListener('click', function () {
-      menuOpen = false;
-      if (mobileMenu) mobileMenu.style.display = 'none';
-      if (iconMenu)   iconMenu.style.display   = 'block';
-      if (iconClose)  iconClose.style.display  = 'none';
-    });
-  });
+// ── Mobile Menu Toggle ──
+var menuToggle = document.getElementById(‘menu-toggle’);
+var mobileMenu = document.getElementById(‘mobile-menu’);
+var iconMenu   = document.getElementById(‘icon-menu’);
+var iconClose  = document.getElementById(‘icon-close’);
+var menuOpen   = false;
 
-  // ── Rotating Headline ──
-  var groups = [
-    { id: 'rw-adjective', words: ['High-Performance','Conversion-Ready','Stunning','Future-Proof'] },
-    { id: 'rw-who',       words: ['Local Businesses','Restaurants & Shops','Service Companies','Pittsburgh Brands'] },
-    { id: 'rw-result',    words: ['Win.','Convert.','Dominate.','Grow.'] }
-  ];
+if (menuToggle && mobileMenu) {
+menuToggle.addEventListener(‘click’, function (e) {
+e.stopPropagation();
+menuOpen = !menuOpen;
+mobileMenu.style.display = menuOpen ? ‘block’ : ‘none’;
+if (iconMenu)  iconMenu.style.display  = menuOpen ? ‘none’  : ‘block’;
+if (iconClose) iconClose.style.display = menuOpen ? ‘block’ : ‘none’;
+});
+}
+document.querySelectorAll(’.mobile-nav-link’).forEach(function (link) {
+link.addEventListener(‘click’, function () {
+menuOpen = false;
+if (mobileMenu) mobileMenu.style.display = ‘none’;
+if (iconMenu)   iconMenu.style.display   = ‘block’;
+if (iconClose)  iconClose.style.display  = ‘none’;
+});
+});
 
-  function rotateEl(el, words) {
-    var idx = 0;
-    setInterval(function () {
-      // Fade out
-      el.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-      el.style.opacity    = '0';
-      el.style.transform  = 'translateY(-10px)';
-      setTimeout(function () {
-        idx = (idx + 1) % words.length;
-        el.textContent  = words[idx];
-        el.style.transform = 'translateY(10px)';
-        // Fade in
-        requestAnimationFrame(function () {
-          requestAnimationFrame(function () {
-            el.style.opacity   = '1';
-            el.style.transform = 'translateY(0)';
-          });
-        });
-      }, 320);
-    }, 2600);
-  }
+// ── Rotating Headline ──
+var groups = [
+{ id: ‘rw-adjective’, words: [‘High-Performance’,‘Conversion-Ready’,‘Stunning’,‘Future-Proof’] },
+{ id: ‘rw-who’,       words: [‘Local Businesses’,‘Restaurants & Shops’,‘Service Companies’,‘Pittsburgh Brands’] },
+{ id: ‘rw-result’,    words: [‘Win.’,‘Convert.’,‘Dominate.’,‘Grow.’] }
+];
 
-  groups.forEach(function (g, i) {
-    var el = document.getElementById(g.id);
-    if (!el) return;
-    // Stagger start times so all three don't flip simultaneously
-    setTimeout(function () { rotateEl(el, g.words); }, i * 850);
-  });
+function rotateEl(el, words) {
+var idx = 0;
+setInterval(function () {
+// Fade out
+el.style.transition = ‘opacity 0.45s ease, transform 0.45s ease’;
+el.style.opacity    = ‘0’;
+el.style.transform  = ‘translateY(-10px)’;
+setTimeout(function () {
+idx = (idx + 1) % words.length;
+el.textContent  = words[idx];
+el.style.transform = ‘translateY(10px)’;
+// Fade in
+requestAnimationFrame(function () {
+requestAnimationFrame(function () {
+el.style.opacity   = ‘1’;
+el.style.transform = ‘translateY(0)’;
+});
+});
+}, 450);
+}, 4500);
+}
 
-  // ── Pricing Toggle ──
-  var toggleTrack = document.getElementById('toggle-track');
-  var isYearly    = false;
-  if (toggleTrack) {
-    toggleTrack.addEventListener('click', function () {
-      isYearly = !isYearly;
-      var thumb        = document.getElementById('toggle-thumb');
-      var labelMonthly = document.getElementById('label-monthly');
-      var labelYearly  = document.getElementById('label-yearly');
-      if (isYearly) {
-        if (thumb)        thumb.style.transform    = 'translateX(28px)';
-        if (labelMonthly) labelMonthly.style.color = '#64748b';
-        if (labelYearly)  labelYearly.style.color  = '#2EB9F0';
-        document.getElementById('price-basic').textContent    = '$39';
-        document.getElementById('price-pro').textContent      = '$79';
-        document.getElementById('price-ultimate').textContent = '$119';
-        document.getElementById('yearly-basic').classList.remove('hidden');
-        document.getElementById('yearly-pro').classList.remove('hidden');
-        document.getElementById('yearly-ultimate').classList.remove('hidden');
-      } else {
-        if (thumb)        thumb.style.transform    = 'translateX(0)';
-        if (labelMonthly) labelMonthly.style.color = '#2EB9F0';
-        if (labelYearly)  labelYearly.style.color  = '#64748b';
-        document.getElementById('price-basic').textContent    = '$49';
-        document.getElementById('price-pro').textContent      = '$99';
-        document.getElementById('price-ultimate').textContent = '$149';
-        document.getElementById('yearly-basic').classList.add('hidden');
-        document.getElementById('yearly-pro').classList.add('hidden');
-        document.getElementById('yearly-ultimate').classList.add('hidden');
-      }
-    });
-  }
+groups.forEach(function (g, i) {
+var el = document.getElementById(g.id);
+if (!el) return;
+// Stagger start times so all three don’t flip simultaneously
+setTimeout(function () { rotateEl(el, g.words); }, i * 850);
+});
 
-  // ── Form Submit ──
-  window.handleSubmit = function (e) {
-    e.preventDefault();
-    var success = document.getElementById('form-success');
-    if (success) {
-      success.classList.remove('hidden');
-      e.target.reset();
-      setTimeout(function () { success.classList.add('hidden'); }, 5000);
-    }
-  };
+// ── Pricing Toggle ──
+var toggleTrack = document.getElementById(‘toggle-track’);
+var isYearly    = false;
+if (toggleTrack) {
+toggleTrack.addEventListener(‘click’, function () {
+isYearly = !isYearly;
+var thumb        = document.getElementById(‘toggle-thumb’);
+var labelMonthly = document.getElementById(‘label-monthly’);
+var labelYearly  = document.getElementById(‘label-yearly’);
+if (isYearly) {
+if (thumb)        thumb.style.transform    = ‘translateX(28px)’;
+if (labelMonthly) labelMonthly.style.color = ‘#64748b’;
+if (labelYearly)  labelYearly.style.color  = ‘#2EB9F0’;
+document.getElementById(‘price-basic’).textContent    = ‘$39’;
+document.getElementById(‘price-pro’).textContent      = ‘$79’;
+document.getElementById(‘price-ultimate’).textContent = ‘$119’;
+document.getElementById(‘yearly-basic’).classList.remove(‘hidden’);
+document.getElementById(‘yearly-pro’).classList.remove(‘hidden’);
+document.getElementById(‘yearly-ultimate’).classList.remove(‘hidden’);
+} else {
+if (thumb)        thumb.style.transform    = ‘translateX(0)’;
+if (labelMonthly) labelMonthly.style.color = ‘#2EB9F0’;
+if (labelYearly)  labelYearly.style.color  = ‘#64748b’;
+document.getElementById(‘price-basic’).textContent    = ‘$49’;
+document.getElementById(‘price-pro’).textContent      = ‘$99’;
+document.getElementById(‘price-ultimate’).textContent = ‘$149’;
+document.getElementById(‘yearly-basic’).classList.add(‘hidden’);
+document.getElementById(‘yearly-pro’).classList.add(‘hidden’);
+document.getElementById(‘yearly-ultimate’).classList.add(‘hidden’);
+}
+});
+}
 
-  // ── Scroll Animations ──
-  var observer = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity   = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, { threshold: 0.08 });
+// ── Form Submit ──
+window.handleSubmit = function (e) {
+e.preventDefault();
+var success = document.getElementById(‘form-success’);
+if (success) {
+success.classList.remove(‘hidden’);
+e.target.reset();
+setTimeout(function () { success.classList.add(‘hidden’); }, 5000);
+}
+};
 
-  document.querySelectorAll('.service-card, .glass-card, .addon-card, .advantage-item').forEach(function (el) {
-    el.style.opacity    = '0';
-    el.style.transform  = 'translateY(24px)';
-    el.style.transition = 'opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1)';
-    observer.observe(el);
-  });
+// ── Scroll Animations ──
+var observer = new IntersectionObserver(function (entries) {
+entries.forEach(function (entry) {
+if (entry.isIntersecting) {
+entry.target.style.opacity   = ‘1’;
+entry.target.style.transform = ‘translateY(0)’;
+}
+});
+}, { threshold: 0.08 });
+
+document.querySelectorAll(’.service-card, .glass-card, .addon-card, .advantage-item’).forEach(function (el) {
+el.style.opacity    = ‘0’;
+el.style.transform  = ‘translateY(24px)’;
+el.style.transition = ‘opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1)’;
+observer.observe(el);
+});
 
 });
 
 // ── Modal helpers (global so inline onclick works) ──
-function openModal(id) {
-  var m = document.getElementById(id);
-  if (m) { m.classList.add('open'); document.body.style.overflow = 'hidden'; }
-}
-function closeModal(id) {
-  var m = document.getElementById(id);
-  if (m) { m.classList.remove('open'); document.body.style.overflow = ''; }
-}
-// Close on Escape key
-document.addEventListener('keydown', function (e) {
-  if (e.key === 'Escape') {
-    ['privacy-modal','terms-modal'].forEach(closeModal);
-  }
-});
-</script>
-
-</body>
-</html>
+f
