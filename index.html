@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nour Digital — Pittsburgh's Premier Web Design Agency</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/lucide@0.263.1/dist/umd/lucide.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
@@ -369,92 +368,132 @@
       #menu-toggle { display: none !important; }
       #mobile-menu { display: none !important; }
     }
-    @media (max-width: 767px) {
-      .desktop-nav { display: none !important; }
-    }
 
-    /* ── Rotating Headline ── */
-    .rotating-word {
-      display: inline-block;
-      position: relative;
-    }
-    .rotating-word .word {
-      display: inline-block;
-      position: absolute;
-      left: 0;
-      top: 0;
-      white-space: nowrap;
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 0.45s cubic-bezier(0.4,0,0.2,1), transform 0.45s cubic-bezier(0.4,0,0.2,1);
-      pointer-events: none;
-    }
-    .rotating-word .word.active {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-      position: relative;
-    }
-    /* Sizer — invisible, reserves space for the widest word */
-    .rotating-word .word-sizer {
-      visibility: hidden;
-      pointer-events: none;
-    }
-
-    /* ── Nour 'N' Logo Mark ── */
-    .nour-logo-mark {
-      position: relative;
+    /* ── Privacy / Terms Modal ── */
+    .legal-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-shrink: 0;
-    }
-    /* Outer glow ring — pulses slowly like emitted light */
-    .nour-logo-mark::before {
-      content: '';
-      position: absolute;
-      inset: -5px;
-      border-radius: 14px;
-      background: radial-gradient(circle at 50% 40%, rgba(46,185,240,0.35) 0%, rgba(46,185,240,0.08) 55%, transparent 75%);
-      filter: blur(6px);
-      animation: nour-breathe 3s ease-in-out infinite;
-    }
-    /* Inner glow corona */
-    .nour-logo-mark::after {
-      content: '';
-      position: absolute;
-      inset: -1px;
-      border-radius: 11px;
-      background: radial-gradient(circle at 50% 20%, rgba(255,255,255,0.18) 0%, transparent 60%);
+      padding: 1.5rem;
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(8px);
+      opacity: 0;
       pointer-events: none;
+      transition: opacity 0.3s;
     }
-    @keyframes nour-breathe {
-      0%, 100% { opacity: 0.7; transform: scale(1); }
-      50%       { opacity: 1;   transform: scale(1.08); }
+    .legal-modal.open {
+      opacity: 1;
+      pointer-events: auto;
     }
-
-    /* The SVG 'N' itself */
-    .nour-n-svg {
+    .legal-modal-box {
+      background: #0d1420;
+      border: 1px solid rgba(46,185,240,0.25);
+      border-radius: 16px;
+      max-width: 680px;
+      width: 100%;
+      max-height: 80vh;
+      overflow-y: auto;
+      padding: 2.5rem;
       position: relative;
-      z-index: 1;
-      filter: drop-shadow(0 0 6px rgba(46,185,240,0.9))
-              drop-shadow(0 0 14px rgba(46,185,240,0.5));
-      transition: filter 0.3s;
     }
-    a:hover .nour-n-svg {
-      filter: drop-shadow(0 0 8px rgba(255,255,255,0.8))
-              drop-shadow(0 0 20px rgba(46,185,240,0.9))
-              drop-shadow(0 0 40px rgba(46,185,240,0.4));
+    .legal-modal-box h2 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.75rem;
+      color: white;
+      margin-bottom: 0.5rem;
     }
-
-    /* Footer mini version */
-    .nour-logo-mark-sm::before {
-      inset: -3px;
-      border-radius: 10px;
-      filter: blur(4px);
+    .legal-modal-box h3 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #2EB9F0;
+      margin: 1.4rem 0 0.4rem;
     }
+    .legal-modal-box p, .legal-modal-box li {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      color: #94a3b8;
+      line-height: 1.7;
+      margin-bottom: 0.5rem;
+    }
+    .legal-modal-box ul { padding-left: 1.25rem; }
+    .modal-close-btn {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      background: rgba(46,185,240,0.1);
+      border: 1px solid rgba(46,185,240,0.25);
+      border-radius: 8px;
+      color: #94a3b8;
+      cursor: pointer;
+      padding: 6px 10px;
+      font-size: 1.1rem;
+      line-height: 1;
+      transition: all 0.2s;
+    }
+    .modal-close-btn:hover { background: rgba(46,185,240,0.2); color: white; }
   </style>
 
+```
+/* ── Nour 'N' Logo Mark ── */
+.nour-logo-mark {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+/* Outer glow ring — pulses slowly like emitted light */
+.nour-logo-mark::before {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border-radius: 14px;
+  background: radial-gradient(circle at 50% 40%, rgba(46,185,240,0.35) 0%, rgba(46,185,240,0.08) 55%, transparent 75%);
+  filter: blur(6px);
+  animation: nour-breathe 3s ease-in-out infinite;
+}
+/* Inner glow corona */
+.nour-logo-mark::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 11px;
+  background: radial-gradient(circle at 50% 20%, rgba(255,255,255,0.18) 0%, transparent 60%);
+  pointer-events: none;
+}
+@keyframes nour-breathe {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50%       { opacity: 1;   transform: scale(1.08); }
+}
+
+/* The SVG 'N' itself */
+.nour-n-svg {
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 0 6px rgba(46,185,240,0.9))
+          drop-shadow(0 0 14px rgba(46,185,240,0.5));
+  transition: filter 0.3s;
+}
+a:hover .nour-n-svg {
+  filter: drop-shadow(0 0 8px rgba(255,255,255,0.8))
+          drop-shadow(0 0 20px rgba(46,185,240,0.9))
+          drop-shadow(0 0 40px rgba(46,185,240,0.4));
+}
+
+/* Footer mini version */
+.nour-logo-mark-sm::before {
+  inset: -3px;
+  border-radius: 10px;
+  filter: blur(4px);
+}
+```
+
+  </style>
 </head>
 <body>
 
@@ -552,38 +591,19 @@
     <!-- Badge -->
     <div class="animate-fade-up mb-8 flex justify-center">
       <div class="pittsburgh-badge">
-        <i data-lucide="map-pin" class="w-3 h-3"></i>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
         Pittsburgh, PA · Carnegie-Based Agency
       </div>
     </div>
 
 ```
 <!-- Headline with rotating words -->
-<h1 id="hero-headline" class="animate-fade-up-delay-1 font-display font-800 text-white leading-none mb-6" style="font-size: clamp(2.5rem, 6.5vw, 5.5rem); letter-spacing: -0.03em;">
-  We Build
-  <span class="text-gradient rotating-word" id="rw-adjective">
-    <span class="word active">High-Performance</span>
-    <span class="word">Conversion-Ready</span>
-    <span class="word">Stunning</span>
-    <span class="word">Future-Proof</span>
-    <span class="word word-sizer" aria-hidden="true">High-Performance</span>
-  </span><br/>
-  Websites For
-  <span class="text-gradient rotating-word" id="rw-who">
-    <span class="word active">Local Businesses</span>
-    <span class="word">Restaurants &amp; Shops</span>
-    <span class="word">Service Companies</span>
-    <span class="word">Pittsburgh Brands</span>
-    <span class="word word-sizer" aria-hidden="true">Restaurants &amp; Shops</span>
-  </span><br/>
-  That
-  <span class="text-gradient rotating-word" id="rw-result">
-    <span class="word active">Win.</span>
-    <span class="word">Convert.</span>
-    <span class="word">Dominate.</span>
-    <span class="word">Grow.</span>
-    <span class="word word-sizer" aria-hidden="true">Dominate.</span>
-  </span>
+<h1 id="hero-headline" class="animate-fade-up-delay-1 font-display font-800 text-white leading-tight mb-6" style="font-size: clamp(2.5rem, 6.5vw, 5.5rem); letter-spacing: -0.03em;">
+  We Build<br/>
+  <span id="rw-adjective" class="text-gradient rw-span">High-Performance</span><br/>
+  Websites For<br/>
+  <span id="rw-who" class="text-gradient rw-span">Local Businesses</span><br/>
+  That <span id="rw-result" class="text-gradient rw-span">Win.</span>
 </h1>
 
 <p class="animate-fade-up-delay-2 font-body text-slate-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed">
@@ -628,7 +648,7 @@
   <!-- Scroll Indicator -->
 
   <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce" style="color: var(--electric);">
-    <i data-lucide="chevron-down" class="w-5 h-5"></i>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
   </div>
 </section>
 
@@ -657,9 +677,9 @@
     <h3 class="font-display font-700 text-white text-2xl mb-3">Custom Web Design</h3>
     <p class="text-slate-400 font-body leading-relaxed mb-6">Hand-crafted websites built from scratch — no templates, no shortcuts. Pixel-perfect designs that reflect your brand and convert visitors.</p>
     <ul class="space-y-2">
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>Mobile-first responsive design</li>
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>Lightning-fast load times</li>
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>Conversion-optimized layouts</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Mobile-first responsive design</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Lightning-fast load times</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Conversion-optimized layouts</li>
     </ul>
   </div>
 
@@ -671,9 +691,9 @@
     <h3 class="font-display font-700 text-white text-2xl mb-3">Hosting & Maintenance</h3>
     <p class="text-slate-400 font-body leading-relaxed mb-6">We handle every technical detail so you never have to worry. Secure, fast, and always-online hosting with proactive maintenance.</p>
     <ul class="space-y-2">
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>Free SSL Certificate</li>
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>24/7 uptime monitoring</li>
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>Daily backups & security patches</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Free SSL Certificate</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>24/7 uptime monitoring</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Daily backups & security patches</li>
     </ul>
   </div>
 
@@ -685,9 +705,9 @@
     <h3 class="font-display font-700 text-white text-2xl mb-3">SEO & Google Business</h3>
     <p class="text-slate-400 font-body leading-relaxed mb-6">Dominate local search results. We optimize your site and Google Business Profile to put you in front of Pittsburgh customers actively looking for you.</p>
     <ul class="space-y-2">
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>Google Business Profile setup</li>
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>Local keyword targeting</li>
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>Monthly SEO health reports</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Google Business Profile setup</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Local keyword targeting</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Monthly SEO health reports</li>
     </ul>
   </div>
 </div>
@@ -714,7 +734,7 @@
   </h2>
   <div class="flex justify-center mt-4">
     <div class="pittsburgh-badge">
-      <i data-lucide="map-pin" class="w-3 h-3"></i>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
       Pittsburgh Local — Carnegie, PA
     </div>
   </div>
@@ -739,14 +759,14 @@
       <p class="text-slate-400 text-sm font-body mt-2">Perfect for local businesses getting online fast.</p>
     </div>
     <ul class="space-y-2.5 mb-8">
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>Single-page landing site</li>
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>Mobile-responsive design</li>
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>Contact form included</li>
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i><strong style="color:white">24-hour launch guarantee</strong></li>
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>Google Analytics setup</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Single-page landing site</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Mobile-responsive design</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Contact form included</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg><strong style="color:white">24-hour launch guarantee</strong></li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Google Analytics setup</li>
     </ul>
     <a href="https://buy.stripe.com/your-stripe-link-essential" target="_blank" class="btn-secondary w-full py-3 rounded-xl text-sm font-display font-700 inline-flex items-center justify-center gap-2">
-      <i data-lucide="credit-card" class="w-4 h-4"></i>Get Started — $699
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>Get Started — $699
     </a>
   </div>
 
@@ -766,15 +786,15 @@
       <p class="text-slate-400 text-sm font-body mt-2">For serious local businesses ready to grow.</p>
     </div>
     <ul class="space-y-2.5 mb-8">
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i><strong style="color:white">Up to 5 pages</strong></li>
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>Custom SEO setup & metadata</li>
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>Google Business integration</li>
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>Professional copywriting</li>
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>Contact & quote forms</li>
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>Schema markup for local SEO</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg><strong style="color:white">Up to 5 pages</strong></li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Custom SEO setup & metadata</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Google Business integration</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Professional copywriting</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Contact & quote forms</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Schema markup for local SEO</li>
     </ul>
     <a href="https://buy.stripe.com/your-stripe-link-growth" target="_blank" class="btn-primary w-full py-3 rounded-xl text-sm font-display font-700 inline-flex items-center justify-center gap-2">
-      <i data-lucide="credit-card" class="w-4 h-4"></i>Get Started — $1,199
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>Get Started — $1,199
     </a>
   </div>
 
@@ -788,14 +808,14 @@
       <p class="text-slate-400 text-sm font-body mt-2">Full-scale solutions engineered for your goals.</p>
     </div>
     <ul class="space-y-2.5 mb-8">
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>Full e-commerce store</li>
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>Custom web applications</li>
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>Advanced API integrations</li>
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>Custom booking/CRM logic</li>
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>Priority development timeline</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Full e-commerce store</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Custom web applications</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Advanced API integrations</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Custom booking/CRM logic</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Priority development timeline</li>
     </ul>
     <a href="#contact" class="btn-secondary w-full py-3 rounded-xl text-sm font-display font-700 inline-flex items-center justify-center gap-2">
-      <i data-lucide="message-circle" class="w-4 h-4"></i>Get a Quote
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Get a Quote
     </a>
   </div>
 </div>
@@ -830,13 +850,13 @@
       <p class="text-slate-400 text-xs font-body mt-1 hidden" id="yearly-basic">Billed $470/year — save $118</p>
     </div>
     <ul class="space-y-2.5 mb-8">
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>Secure managed hosting</li>
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>Free SSL certificate</li>
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>Monthly security updates</li>
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>Daily automated backups</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Secure managed hosting</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Free SSL certificate</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Monthly security updates</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Daily automated backups</li>
     </ul>
     <a href="https://buy.stripe.com/your-stripe-basic-monthly" target="_blank" class="btn-secondary w-full py-3 rounded-xl text-sm font-display font-700 inline-flex items-center justify-center gap-2">
-      <i data-lucide="credit-card" class="w-4 h-4"></i>Subscribe
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>Subscribe
     </a>
   </div>
 
@@ -856,14 +876,14 @@
       <p class="text-slate-400 text-xs font-body mt-1 hidden" id="yearly-pro">Billed $950/year — save $238</p>
     </div>
     <ul class="space-y-2.5 mb-8">
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>Everything in Basic</li>
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i><strong style="color:white">2 hrs/mo content updates</strong></li>
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>Priority support (24hr response)</li>
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>Performance optimization</li>
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>Plugin & platform updates</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Everything in Basic</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg><strong style="color:white">2 hrs/mo content updates</strong></li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Priority support (24hr response)</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Performance optimization</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Plugin & platform updates</li>
     </ul>
     <a href="https://buy.stripe.com/your-stripe-pro-monthly" target="_blank" class="btn-primary w-full py-3 rounded-xl text-sm font-display font-700 inline-flex items-center justify-center gap-2">
-      <i data-lucide="credit-card" class="w-4 h-4"></i>Subscribe
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>Subscribe
     </a>
   </div>
 
@@ -878,14 +898,14 @@
       <p class="text-slate-400 text-xs font-body mt-1 hidden" id="yearly-ultimate">Billed $1,430/year — save $358</p>
     </div>
     <ul class="space-y-2.5 mb-8">
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>Everything in Pro</li>
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i><strong style="color:white">Unlimited small updates</strong></li>
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>Monthly SEO health reports</li>
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>24/7 uptime monitoring</li>
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>Quarterly strategy call</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Everything in Pro</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg><strong style="color:white">Unlimited small updates</strong></li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Monthly SEO health reports</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>24/7 uptime monitoring</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Quarterly strategy call</li>
     </ul>
     <a href="https://buy.stripe.com/your-stripe-ultimate-monthly" target="_blank" class="btn-secondary w-full py-3 rounded-xl text-sm font-display font-700 inline-flex items-center justify-center gap-2">
-      <i data-lucide="credit-card" class="w-4 h-4"></i>Subscribe
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>Subscribe
     </a>
   </div>
 </div>
@@ -912,13 +932,13 @@
       </div>
     </div>
     <ul class="space-y-2 mb-5">
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>3 unique initial concepts</li>
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>Professional vector files (SVG/AI)</li>
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>Full ownership & rights transfer</li>
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>2 rounds of revisions</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>3 unique initial concepts</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Professional vector files (SVG/AI)</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Full ownership & rights transfer</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>2 rounds of revisions</li>
     </ul>
     <a href="https://buy.stripe.com/your-stripe-logo" target="_blank" class="btn-primary w-full py-2.5 rounded-lg text-sm font-display font-700 inline-flex items-center justify-center gap-2">
-      <i data-lucide="credit-card" class="w-4 h-4"></i>Order Now — $299
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>Order Now — $299
     </a>
   </div>
 
@@ -934,13 +954,13 @@
       </div>
     </div>
     <ul class="space-y-2 mb-5">
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>Everything in Logo Design</li>
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>Business card design (print-ready)</li>
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>Letterhead & envelope design</li>
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>Brand color & font guide</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Everything in Logo Design</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Business card design (print-ready)</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Letterhead & envelope design</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Brand color & font guide</li>
     </ul>
     <a href="https://buy.stripe.com/your-stripe-identity" target="_blank" class="btn-primary w-full py-2.5 rounded-lg text-sm font-display font-700 inline-flex items-center justify-center gap-2">
-      <i data-lucide="credit-card" class="w-4 h-4"></i>Order Now — $499
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>Order Now — $499
     </a>
   </div>
 
@@ -956,13 +976,13 @@
       </div>
     </div>
     <ul class="space-y-2 mb-5">
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>5 high-converting ad graphics</li>
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>TikTok, Facebook & Instagram sizes</li>
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>Google Display Ad formats</li>
-      <li class="check-item"><i data-lucide="check-circle" class="w-4 h-4 check-icon"></i>Editable source files delivered</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>5 high-converting ad graphics</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>TikTok, Facebook & Instagram sizes</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Google Display Ad formats</li>
+      <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Editable source files delivered</li>
     </ul>
     <a href="https://buy.stripe.com/your-stripe-adpack" target="_blank" class="btn-primary w-full py-2.5 rounded-lg text-sm font-display font-700 inline-flex items-center justify-center gap-2">
-      <i data-lucide="credit-card" class="w-4 h-4"></i>Order Now — $199
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>Order Now — $199
     </a>
   </div>
 </div>
@@ -983,7 +1003,7 @@
       <!-- Left -->
       <div>
         <div class="pittsburgh-badge mb-6">
-          <i data-lucide="map-pin" class="w-3 h-3"></i>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           Carnegie, PA 15106
         </div>
         <h2 class="font-display font-800 text-white text-4xl md:text-5xl mb-6" style="letter-spacing:-0.02em;">
@@ -993,10 +1013,10 @@
           We're not a faceless agency across the country. We're your neighbors — based right here in Carnegie, steps from Pittsburgh. We've eaten at the same restaurants you serve, we shop at the same local businesses, and we understand what it takes to win in the Pittsburgh market.
         </p>
         <p class="text-slate-400 font-body text-lg leading-relaxed mb-8">
-          When you hire Apex Digital, you get a dedicated local partner who picks up the phone, shows up when needed, and treats your business like their own.
+          When you hire Nour Digital, you get a dedicated local partner who picks up the phone, shows up when needed, and treats your business like their own.
         </p>
         <a href="#contact" class="btn-primary px-7 py-3.5 rounded-xl text-sm inline-flex items-center gap-2">
-          <i data-lucide="phone" class="w-4 h-4"></i>Talk to a Local Expert
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.72 9.69 19.79 19.79 0 0 1 1.61 1 2 2 0 0 1 3.6 0h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6.18 6.18l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Talk to a Local Expert
         </a>
       </div>
 
@@ -1005,7 +1025,7 @@
   <div class="space-y-4">
     <div class="advantage-item rounded-xl">
       <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background: rgba(46,185,240,0.1);">
-        <i data-lucide="users" class="w-5 h-5" style="color: var(--electric);"></i>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
       </div>
       <div>
         <h4 class="font-display text-white font-700 text-lg mb-1">We Know Your Customers</h4>
@@ -1014,7 +1034,7 @@
     </div>
     <div class="advantage-item rounded-xl">
       <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background: rgba(46,185,240,0.1);">
-        <i data-lucide="phone-call" class="w-5 h-5" style="color: var(--electric);"></i>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.72 9.69 19.79 19.79 0 0 1 1.61 1 2 2 0 0 1 3.6 0h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6.18 6.18l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
       </div>
       <div>
         <h4 class="font-display text-white font-700 text-lg mb-1">Real People, Real Support</h4>
@@ -1023,7 +1043,7 @@
     </div>
     <div class="advantage-item rounded-xl">
       <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background: rgba(46,185,240,0.1);">
-        <i data-lucide="handshake" class="w-5 h-5" style="color: var(--electric);"></i>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
       </div>
       <div>
         <h4 class="font-display text-white font-700 text-lg mb-1">Community-First Philosophy</h4>
@@ -1032,7 +1052,7 @@
     </div>
     <div class="advantage-item rounded-xl">
       <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background: rgba(46,185,240,0.1);">
-        <i data-lucide="map" class="w-5 h-5" style="color: var(--electric);"></i>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
       </div>
       <div>
         <h4 class="font-display text-white font-700 text-lg mb-1">Local SEO Expertise</h4>
@@ -1069,19 +1089,19 @@
     <div class="space-y-4">
       <a href="/cdn-cgi/l/email-protection#7018151c1c1f301e1f05021419171904111c5e131f1d" class="flex items-center gap-3 text-slate-300 hover:text-white transition-colors font-body">
         <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(46,185,240,0.1); border: 1px solid var(--border);">
-          <i data-lucide="mail" class="w-4 h-4" style="color: var(--electric);"></i>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         </div>
         <span class="__cf_email__" data-cfemail="6a020f0606052a04051f180e030d031e0b0644090507">[email&#160;protected]</span>
       </a>
       <a href="tel:+14125550123" class="flex items-center gap-3 text-slate-300 hover:text-white transition-colors font-body">
         <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(46,185,240,0.1); border: 1px solid var(--border);">
-          <i data-lucide="phone" class="w-4 h-4" style="color: var(--electric);"></i>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.72 9.69 19.79 19.79 0 0 1 1.61 1 2 2 0 0 1 3.6 0h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6.18 6.18l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         </div>
         (412) 555-0123
       </a>
       <div class="flex items-center gap-3 text-slate-400 font-body">
         <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(46,185,240,0.1); border: 1px solid var(--border);">
-          <i data-lucide="map-pin" class="w-4 h-4" style="color: var(--electric);"></i>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
         </div>
         Carnegie, PA 15106 · Pittsburgh Metro
       </div>
@@ -1090,19 +1110,19 @@
     <!-- Social Links -->
     <div class="flex gap-3 mt-8">
       <a href="#" aria-label="Facebook" class="w-10 h-10 rounded-lg flex items-center justify-center text-slate-400 hover:text-white hover:border-blue-400 transition-all" style="border: 1px solid var(--border);">
-        <i data-lucide="facebook" class="w-4 h-4"></i>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
       </a>
       <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-lg flex items-center justify-center text-slate-400 hover:text-white transition-all" style="border: 1px solid var(--border);">
-        <i data-lucide="instagram" class="w-4 h-4"></i>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
       </a>
       <a href="#" aria-label="LinkedIn" class="w-10 h-10 rounded-lg flex items-center justify-center text-slate-400 hover:text-white transition-all" style="border: 1px solid var(--border);">
-        <i data-lucide="linkedin" class="w-4 h-4"></i>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
       </a>
       <a href="#" aria-label="TikTok" class="w-10 h-10 rounded-lg flex items-center justify-center text-slate-400 hover:text-white transition-all" style="border: 1px solid var(--border);">
-        <i data-lucide="video" class="w-4 h-4"></i>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
       </a>
       <a href="#" aria-label="Google" class="w-10 h-10 rounded-lg flex items-center justify-center text-slate-400 hover:text-white transition-all" style="border: 1px solid var(--border);">
-        <i data-lucide="globe" class="w-4 h-4"></i>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
       </a>
     </div>
   </div>
@@ -1146,7 +1166,7 @@
         <textarea class="form-input resize-none" rows="4" placeholder="Describe your business, your goals, and any specific requirements..."></textarea>
       </div>
       <button type="submit" class="btn-primary w-full py-4 rounded-xl font-display font-700 text-base inline-flex items-center justify-center gap-2">
-        <i data-lucide="send" class="w-5 h-5"></i>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
         Send Message — We'll Reply Today
       </button>
       <p id="form-success" class="hidden text-center font-body text-sm" style="color: var(--electric);">✓ Message sent! We'll be in touch soon.</p>
@@ -1186,8 +1206,8 @@
   </div>
   <p class="text-slate-600 text-sm font-body">© 2026 Nour Digital. All rights reserved. · Pittsburgh's Premier Web Studio.</p>
   <div class="flex gap-6">
-    <a href="#" class="text-slate-600 hover:text-slate-400 text-sm font-body transition-colors">Privacy</a>
-    <a href="#" class="text-slate-600 hover:text-slate-400 text-sm font-body transition-colors">Terms</a>
+    <a href="#" onclick="openModal('privacy-modal'); return false;" class="text-slate-600 hover:text-slate-400 text-sm font-body transition-colors">Privacy</a>
+    <a href="#" onclick="openModal('terms-modal'); return false;" class="text-slate-600 hover:text-slate-400 text-sm font-body transition-colors">Terms</a>
     <a href="#" class="text-slate-600 hover:text-slate-400 text-sm font-body transition-colors">Sitemap</a>
   </div>
 </div>
@@ -1196,83 +1216,208 @@
   </div>
 </footer>
 
+<!-- ═══════════════════════════════════════ PRIVACY MODAL ═══════════════════════════════════════ -->
+
+<div id="privacy-modal" class="legal-modal" onclick="if(event.target===this) closeModal('privacy-modal')">
+  <div class="legal-modal-box">
+    <button class="modal-close-btn" onclick="closeModal('privacy-modal')">✕</button>
+    <h2>Privacy Policy</h2>
+    <p style="color:#2EB9F0; font-size:0.8rem; font-family:'Syne',sans-serif; letter-spacing:0.05em;">Last updated: April 2026</p>
+    <h3>1. Information We Collect</h3>
+    <p>When you fill out our contact form or request a quote, we collect your name, email address, phone number, and business information. We may also collect basic analytics data (pages visited, device type) to improve our website experience.</p>
+    <h3>2. How We Use Your Information</h3>
+    <ul>
+      <li>To respond to your inquiries and deliver the services you requested</li>
+      <li>To send project updates, invoices, and communications related to your account</li>
+      <li>To improve our website and services based on usage patterns</li>
+      <li>We will never sell, rent, or trade your personal information to third parties</li>
+    </ul>
+    <h3>3. Data Storage & Security</h3>
+    <p>Your information is stored securely and protected using industry-standard encryption. We retain your data only as long as necessary to fulfill the purposes outlined in this policy or as required by law.</p>
+    <h3>4. Third-Party Services</h3>
+    <p>We use Stripe for payment processing. Their privacy practices are governed by Stripe's own Privacy Policy. We may use Google Analytics to understand site traffic — this data is anonymized and aggregated.</p>
+    <h3>5. Your Rights</h3>
+    <p>You may request access to, correction of, or deletion of your personal data at any time by contacting us at <span style="color:#2EB9F0">hello@nourdigital.com</span>. We will respond within 30 days.</p>
+    <h3>6. Cookies</h3>
+    <p>Our website may use essential cookies to function properly. No tracking or advertising cookies are used without your consent.</p>
+    <h3>7. Contact Us</h3>
+    <p>Questions about this policy? Reach us at <span style="color:#2EB9F0">hello@nourdigital.com</span> or (412) 555-0123. We're happy to help.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ TERMS MODAL ═══════════════════════════════════════ -->
+
+<div id="terms-modal" class="legal-modal" onclick="if(event.target===this) closeModal('terms-modal')">
+  <div class="legal-modal-box">
+    <button class="modal-close-btn" onclick="closeModal('terms-modal')">✕</button>
+    <h2>Terms of Service</h2>
+    <p style="color:#2EB9F0; font-size:0.8rem; font-family:'Syne',sans-serif; letter-spacing:0.05em;">Last updated: April 2026</p>
+    <h3>1. Services</h3>
+    <p>Nour Digital provides web design, development, hosting, maintenance, SEO, and graphic design services to clients in the Pittsburgh metro area and beyond. All services are subject to a signed agreement or accepted proposal.</p>
+    <h3>2. Payments</h3>
+    <ul>
+      <li>One-time build fees are due 50% upfront and 50% upon project completion</li>
+      <li>Monthly subscription plans are billed on the same date each month via Stripe</li>
+      <li>Late payments may result in a suspension of services after 14 days</li>
+      <li>All sales are final unless otherwise agreed in writing</li>
+    </ul>
+    <h3>3. Client Responsibilities</h3>
+    <p>Clients are responsible for providing timely feedback, content, and approvals. Project timelines are estimates and may be affected by delays in client response. Clients retain ownership of their original content and grant Nour Digital a license to use it for the project.</p>
+    <h3>4. Intellectual Property</h3>
+    <p>Upon full payment, clients receive full ownership of the final website design and content. Nour Digital retains the right to display completed work in our portfolio unless otherwise agreed.</p>
+    <h3>5. Hosting & Maintenance Plans</h3>
+    <p>Monthly plans may be cancelled with 30 days written notice. Cancellation does not entitle a refund of the current billing period. We reserve the right to suspend accounts with outstanding balances.</p>
+    <h3>6. Limitation of Liability</h3>
+    <p>Nour Digital shall not be liable for indirect, incidental, or consequential damages. Our total liability shall not exceed the amount paid for the specific service in the prior 3 months.</p>
+    <h3>7. Contact</h3>
+    <p>For questions about these terms, contact us at <span style="color:#2EB9F0">hello@nourdigital.com</span> or (412) 555-0123.</p>
+  </div>
+</div>
+
 <!-- ═══════════════════════════════════════ SCRIPTS ═══════════════════════════════════════ -->
 
 <script>
-  // Init Lucide Icons
-  lucide.createIcons();
+document.addEventListener('DOMContentLoaded', function () {
 
-  // ── Pricing Toggle ──
-  var isYearly = false;
+  // ── Mobile Menu Toggle ──
+  var menuToggle = document.getElementById('menu-toggle');
+  var mobileMenu = document.getElementById('mobile-menu');
+  var iconMenu   = document.getElementById('icon-menu');
+  var iconClose  = document.getElementById('icon-close');
+  var menuOpen   = false;
 
-  function togglePricing() {
-    isYearly = !isYearly;
-    var thumb        = document.getElementById('toggle-thumb');
-    var labelMonthly = document.getElementById('label-monthly');
-    var labelYearly  = document.getElementById('label-yearly');
-
-    if (isYearly) {
-      thumb.style.transform        = 'translateX(28px)';
-      labelMonthly.style.color     = '#64748b';
-      labelYearly.style.color      = '#2EB9F0';
-      document.getElementById('price-basic').textContent    = '$39';
-      document.getElementById('price-pro').textContent      = '$79';
-      document.getElementById('price-ultimate').textContent = '$119';
-      document.getElementById('yearly-basic').classList.remove('hidden');
-      document.getElementById('yearly-pro').classList.remove('hidden');
-      document.getElementById('yearly-ultimate').classList.remove('hidden');
-    } else {
-      thumb.style.transform        = 'translateX(0)';
-      labelMonthly.style.color     = '#2EB9F0';
-      labelYearly.style.color      = '#64748b';
-      document.getElementById('price-basic').textContent    = '$49';
-      document.getElementById('price-pro').textContent      = '$99';
-      document.getElementById('price-ultimate').textContent = '$149';
-      document.getElementById('yearly-basic').classList.add('hidden');
-      document.getElementById('yearly-pro').classList.add('hidden');
-      document.getElementById('yearly-ultimate').classList.add('hidden');
-    }
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      menuOpen = !menuOpen;
+      mobileMenu.style.display = menuOpen ? 'block' : 'none';
+      if (iconMenu)  iconMenu.style.display  = menuOpen ? 'none'  : 'block';
+      if (iconClose) iconClose.style.display = menuOpen ? 'block' : 'none';
+    });
   }
-  // Wire toggle via addEventListener so it works regardless of Cloudflare rewrites
-  document.addEventListener('DOMContentLoaded', function () {
-    var track = document.getElementById('toggle-track');
-    if (track) track.addEventListener('click', togglePricing);
-  });
-  // Also expose globally for the inline onclick fallback
-  window.togglePricing = togglePricing;
-
-  // ── Form Submit ──
-  window.handleSubmit = function(e) {
-    e.preventDefault();
-    var success = document.getElementById('form-success');
-    success.classList.remove('hidden');
-    e.target.reset();
-    setTimeout(function() { success.classList.add('hidden'); }, 5000);
-  };
-
-  // ── Mobile Menu ──
-  document.querySelectorAll('#mobile-menu a').forEach(function(link) {
-    link.addEventListener('click', function() {
-      document.getElementById('mobile-menu').classList.remove('open');
+  document.querySelectorAll('.mobile-nav-link').forEach(function (link) {
+    link.addEventListener('click', function () {
+      menuOpen = false;
+      if (mobileMenu) mobileMenu.style.display = 'none';
+      if (iconMenu)   iconMenu.style.display   = 'block';
+      if (iconClose)  iconClose.style.display  = 'none';
     });
   });
 
+  // ── Rotating Headline ──
+  var groups = [
+    { id: 'rw-adjective', words: ['High-Performance','Conversion-Ready','Stunning','Future-Proof'] },
+    { id: 'rw-who',       words: ['Local Businesses','Restaurants & Shops','Service Companies','Pittsburgh Brands'] },
+    { id: 'rw-result',    words: ['Win.','Convert.','Dominate.','Grow.'] }
+  ];
+
+  function rotateEl(el, words) {
+    var idx = 0;
+    setInterval(function () {
+      // Fade out
+      el.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+      el.style.opacity    = '0';
+      el.style.transform  = 'translateY(-10px)';
+      setTimeout(function () {
+        idx = (idx + 1) % words.length;
+        el.textContent  = words[idx];
+        el.style.transform = 'translateY(10px)';
+        // Fade in
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            el.style.opacity   = '1';
+            el.style.transform = 'translateY(0)';
+          });
+        });
+      }, 320);
+    }, 2600);
+  }
+
+  groups.forEach(function (g, i) {
+    var el = document.getElementById(g.id);
+    if (!el) return;
+    // Stagger start times so all three don't flip simultaneously
+    setTimeout(function () { rotateEl(el, g.words); }, i * 850);
+  });
+
+  // ── Pricing Toggle ──
+  var toggleTrack = document.getElementById('toggle-track');
+  var isYearly    = false;
+  if (toggleTrack) {
+    toggleTrack.addEventListener('click', function () {
+      isYearly = !isYearly;
+      var thumb        = document.getElementById('toggle-thumb');
+      var labelMonthly = document.getElementById('label-monthly');
+      var labelYearly  = document.getElementById('label-yearly');
+      if (isYearly) {
+        if (thumb)        thumb.style.transform    = 'translateX(28px)';
+        if (labelMonthly) labelMonthly.style.color = '#64748b';
+        if (labelYearly)  labelYearly.style.color  = '#2EB9F0';
+        document.getElementById('price-basic').textContent    = '$39';
+        document.getElementById('price-pro').textContent      = '$79';
+        document.getElementById('price-ultimate').textContent = '$119';
+        document.getElementById('yearly-basic').classList.remove('hidden');
+        document.getElementById('yearly-pro').classList.remove('hidden');
+        document.getElementById('yearly-ultimate').classList.remove('hidden');
+      } else {
+        if (thumb)        thumb.style.transform    = 'translateX(0)';
+        if (labelMonthly) labelMonthly.style.color = '#2EB9F0';
+        if (labelYearly)  labelYearly.style.color  = '#64748b';
+        document.getElementById('price-basic').textContent    = '$49';
+        document.getElementById('price-pro').textContent      = '$99';
+        document.getElementById('price-ultimate').textContent = '$149';
+        document.getElementById('yearly-basic').classList.add('hidden');
+        document.getElementById('yearly-pro').classList.add('hidden');
+        document.getElementById('yearly-ultimate').classList.add('hidden');
+      }
+    });
+  }
+
+  // ── Form Submit ──
+  window.handleSubmit = function (e) {
+    e.preventDefault();
+    var success = document.getElementById('form-success');
+    if (success) {
+      success.classList.remove('hidden');
+      e.target.reset();
+      setTimeout(function () { success.classList.add('hidden'); }, 5000);
+    }
+  };
+
   // ── Scroll Animations ──
-  var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
       if (entry.isIntersecting) {
-        entry.target.style.opacity  = '1';
+        entry.target.style.opacity   = '1';
         entry.target.style.transform = 'translateY(0)';
       }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.08 });
 
-  document.querySelectorAll('.service-card, .glass-card, .addon-card, .advantage-item').forEach(function(el) {
-    el.style.opacity   = '0';
-    el.style.transform = 'translateY(24px)';
+  document.querySelectorAll('.service-card, .glass-card, .addon-card, .advantage-item').forEach(function (el) {
+    el.style.opacity    = '0';
+    el.style.transform  = 'translateY(24px)';
     el.style.transition = 'opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1)';
     observer.observe(el);
   });
+
+});
+
+// ── Modal helpers (global so inline onclick works) ──
+function openModal(id) {
+  var m = document.getElementById(id);
+  if (m) { m.classList.add('open'); document.body.style.overflow = 'hidden'; }
+}
+function closeModal(id) {
+  var m = document.getElementById(id);
+  if (m) { m.classList.remove('open'); document.body.style.overflow = ''; }
+}
+// Close on Escape key
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') {
+    ['privacy-modal','terms-modal'].forEach(closeModal);
+  }
+});
 </script>
 
 </body>
