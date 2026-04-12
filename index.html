@@ -257,7 +257,7 @@
     }
     .modal-close-btn:hover { background: rgba(46,185,240,0.2); color: white; }
     
-    .strike { text-decoration: line-through; color: #64748b; font-size: 0.9em; margin-right: 8px; font-weight: 400; }
+    .strike { text-decoration: line-through; color: #64748b; font-size: 0.7em; margin-right: 6px; font-weight: 400; }
   </style>
 
 </head>
@@ -265,7 +265,6 @@
 
 <nav class="nav-glass fixed top-0 left-0 right-0 z-50">
   <div class="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between">
-
     <a href="#" class="flex items-center gap-3" style="text-decoration:none; flex-shrink:0;">
       <div class="w-9 h-9 rounded-xl" style="background: linear-gradient(145deg, #0d1e30 0%, #071520 100%); border: 1px solid rgba(46,185,240,0.35);">
         <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -292,51 +291,25 @@
       </div>
       <span class="font-display font-800 text-white text-xl tracking-tight">Nour<span style="color:var(--electric)">Digital</span></span>
     </a>
-
     <div class="hidden md:flex items-center gap-8">
       <a href="#services" class="text-sm text-slate-400 hover:text-white transition-colors font-body">Services</a>
       <a href="#pricing" class="text-sm text-slate-400 hover:text-white transition-colors font-body">Pricing</a>
       <a href="#local" class="text-sm text-slate-400 hover:text-white transition-colors font-body">About</a>
       <a href="#contact" class="btn-primary px-5 py-2.5 rounded-lg text-sm inline-block">Get a Quote</a>
     </div>
-
-    <button id="menu-toggle"
-      class="md:hidden flex items-center justify-center w-10 h-10 rounded-xl text-slate-300 hover:text-white transition-all mr-1"
-      style="background: rgba(13,20,32,0.9); border: 1px solid rgba(46,185,240,0.4);"
-      aria-label="Toggle navigation"
-      type="button">
-      <svg id="icon-menu" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
-      </svg>
-      <svg id="icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="display:none;">
-        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-      </svg>
+    <button id="menu-toggle" class="md:hidden flex items-center justify-center w-10 h-10 rounded-xl text-slate-300 hover:text-white transition-all mr-1" style="background: rgba(13,20,32,0.9); border: 1px solid rgba(46,185,240,0.4);" aria-label="Toggle navigation" type="button">
+      <svg id="icon-menu" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg id="icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
   </div>
-
   <div id="mobile-menu" style="display:none; border-top: 1px solid rgba(46,185,240,0.15); background:rgba(8,12,18,0.98); backdrop-filter:blur(20px);">
     <div class="px-5 py-4 space-y-1">
-      <a href="#services" class="mobile-nav-link flex items-center gap-3 text-slate-300 hover:text-white py-3 px-3 rounded-xl hover:bg-white/5 transition-all font-body text-base">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-        Services
-      </a>
-      <a href="#pricing" class="mobile-nav-link flex items-center gap-3 text-slate-300 hover:text-white py-3 px-3 rounded-xl hover:bg-white/5 transition-all font-body text-base">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-        Pricing
-      </a>
-      <a href="#local" class="mobile-nav-link flex items-center gap-3 text-slate-300 hover:text-white py-3 px-3 rounded-xl hover:bg-white/5 transition-all font-body text-base">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        About Us
-      </a>
-      <a href="#contact" class="mobile-nav-link flex items-center gap-3 text-slate-300 hover:text-white py-3 px-3 rounded-xl hover:bg-white/5 transition-all font-body text-base">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        Contact Us
-      </a>
+      <a href="#services" class="mobile-nav-link flex items-center gap-3 text-slate-300 hover:text-white py-3 px-3 rounded-xl hover:bg-white/5 transition-all font-body text-base"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Services</a>
+      <a href="#pricing" class="mobile-nav-link flex items-center gap-3 text-slate-300 hover:text-white py-3 px-3 rounded-xl hover:bg-white/5 transition-all font-body text-base"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Pricing</a>
+      <a href="#local" class="mobile-nav-link flex items-center gap-3 text-slate-300 hover:text-white py-3 px-3 rounded-xl hover:bg-white/5 transition-all font-body text-base"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>About Us</a>
+      <a href="#contact" class="mobile-nav-link flex items-center gap-3 text-slate-300 hover:text-white py-3 px-3 rounded-xl hover:bg-white/5 transition-all font-body text-base"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Contact Us</a>
       <div class="pt-2 pb-1">
-        <a href="#contact" class="mobile-nav-link btn-primary w-full py-3 rounded-xl text-sm font-display flex items-center justify-center gap-2">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-          Get a Free Quote
-        </a>
+        <a href="#contact" class="mobile-nav-link btn-primary w-full py-3 rounded-xl text-sm font-display flex items-center justify-center gap-2"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>Get a Free Quote</a>
       </div>
     </div>
   </div>
@@ -346,778 +319,157 @@
   <div class="orb orb-1"></div>
   <div class="orb orb-2"></div>
   <div class="blob absolute w-96 h-96 opacity-5" style="background: var(--electric); bottom: -100px; right: -100px;"></div>
-
   <div class="max-w-7xl mx-auto px-6 py-32 text-center relative z-10">
     <div class="animate-fade-up mb-2 flex justify-center">
-      <div class="pittsburgh-badge">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        Pittsburgh, PA · Carnegie-Based Agency
-      </div>
+      <div class="pittsburgh-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Pittsburgh, PA · Carnegie-Based Agency</div>
     </div>
-
-    <h1 class="animate-fade-up-delay-1 font-display font-800 text-white leading-tight mb-6" style="font-size: clamp(2.5rem, 6.5vw, 5.5rem); letter-spacing: -0.03em;">
-      We Build<br/>
-      <span id="rw-adjective" class="text-gradient rw-span">High-Performance</span><br/>
-      Websites For<br/>
-      <span id="rw-who" class="text-gradient rw-span">Local Businesses</span><br/>
-      That <span id="rw-result" class="text-gradient rw-span">Win.</span>
-    </h1>
-
-    <p class="animate-fade-up-delay-2 font-body text-slate-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed">
-      Custom-crafted digital experiences from Pittsburgh's premier web design studio. Fast, beautiful, and built to convert — starting at $499.
-    </p>
-
+    <h1 class="animate-fade-up-delay-1 font-display font-800 text-white leading-tight mb-6" style="font-size: clamp(2.5rem, 6.5vw, 5.5rem); letter-spacing: -0.03em;">We Build<br/><span id="rw-adjective" class="text-gradient rw-span">High-Performance</span><br/>Websites For<br/><span id="rw-who" class="text-gradient rw-span">Local Businesses</span><br/>That <span id="rw-result" class="text-gradient rw-span">Win.</span></h1>
+    <p class="animate-fade-up-delay-2 font-body text-slate-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed">Custom-crafted digital experiences from Pittsburgh's premier web design studio. Fast, beautiful, and built to convert — starting at $499.</p>
     <div class="animate-fade-up-delay-3 flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="#services" class="btn-primary px-8 py-4 rounded-xl text-base inline-flex items-center gap-2 justify-center">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-        See Our Services
-      </a>
-      <a href="#contact" class="btn-secondary px-8 py-4 rounded-xl text-base inline-flex items-center gap-2 justify-center">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-        Get a Quote
-      </a>
-    </div>
-
-    <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto animate-fade-in">
-      <div class="text-center p-4 rounded-xl" style="border: 1px solid var(--border); background: rgba(13,20,32,0.4);">
-        <div class="stat-num" style="color: var(--electric);">50+</div>
-        <div class="text-slate-500 text-sm mt-1 font-body">Sites Launched</div>
-      </div>
-      <div class="text-center p-4 rounded-xl" style="border: 1px solid var(--border); background: rgba(13,20,32,0.4);">
-        <div class="stat-num">24h</div>
-        <div class="text-slate-500 text-sm mt-1 font-body">Launch Time</div>
-      </div>
-      <div class="text-center p-4 rounded-xl" style="border: 1px solid var(--border); background: rgba(13,20,32,0.4);">
-        <div class="stat-num">100%</div>
-        <div class="text-slate-500 text-sm mt-1 font-body">Mobile-First</div>
-      </div>
-      <div class="text-center p-4 rounded-xl" style="border: 1px solid var(--border); background: rgba(13,20,32,0.4);">
-        <div class="stat-num">5★</div>
-        <div class="text-slate-500 text-sm mt-1 font-body">Google Rated</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce" style="color: var(--electric);">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
-  </div>
-</section>
-
-<div class="electric-divider"></div>
-
-<section id="services" class="py-28 relative">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="mb-16">
-      <div class="section-label mb-4">What We Do</div>
-      <h2 class="font-display font-800 text-white text-4xl md:text-5xl mb-4" style="letter-spacing:-0.02em;">
-        Full-Stack Digital Services<br/>
-        <span style="color: var(--electric);">For Pittsburgh Businesses</span>
-      </h2>
-      <p class="text-slate-400 text-lg max-w-xl font-body">Everything you need to dominate your local market — design, development, hosting, and visibility.</p>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="service-card rounded-2xl p-8">
-        <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6" style="background: rgba(46,185,240,0.12); border: 1px solid rgba(46,185,240,0.2);">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
-        </div>
-        <h3 class="font-display font-700 text-white text-2xl mb-3">Custom Web Design</h3>
-        <p class="text-slate-400 font-body leading-relaxed mb-6">Hand-crafted websites built from scratch — no templates, no shortcuts. Pixel-perfect designs that reflect your brand and convert visitors.</p>
-        <ul class="space-y-2">
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Mobile-first responsive design</li>
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Lightning-fast load times</li>
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Conversion-optimized layouts</li>
-        </ul>
-      </div>
-
-      <div class="service-card rounded-2xl p-8">
-        <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6" style="background: rgba(46,185,240,0.12); border: 1px solid rgba(46,185,240,0.2);">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <h3 class="font-display font-700 text-white text-2xl mb-3">Hosting & Maintenance</h3>
-        <p class="text-slate-400 font-body leading-relaxed mb-6">We handle every technical detail so you never have to worry. Secure, fast, and always-online hosting with proactive maintenance.</p>
-        <ul class="space-y-2">
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Free SSL Certificate</li>
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>24/7 uptime monitoring</li>
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Daily backups & security patches</li>
-        </ul>
-      </div>
-
-      <div class="service-card rounded-2xl p-8">
-        <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6" style="background: rgba(46,185,240,0.12); border: 1px solid rgba(46,185,240,0.2);">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-        </div>
-        <h3 class="font-display font-700 text-white text-2xl mb-3">SEO & Google Business</h3>
-        <p class="text-slate-400 font-body leading-relaxed mb-6">Dominate local search results. We optimize your site and Google Business Profile to put you in front of Pittsburgh customers actively looking for you.</p>
-        <ul class="space-y-2">
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Google Business Profile setup</li>
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Local keyword targeting</li>
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Monthly SEO health reports</li>
-        </ul>
-      </div>
+      <a href="#services" class="btn-primary px-8 py-4 rounded-xl text-base inline-flex items-center gap-2 justify-center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>See Our Services</a>
+      <a href="#contact" class="btn-secondary px-8 py-4 rounded-xl text-base inline-flex items-center gap-2 justify-center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>Get a Quote</a>
     </div>
   </div>
 </section>
-
-<div class="electric-divider"></div>
 
 <section id="pricing" class="py-28 relative overflow-hidden">
-  <div class="orb" style="width:400px;height:400px;background:radial-gradient(circle,rgba(46,185,240,0.07) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);"></div>
-
   <div class="max-w-7xl mx-auto px-6 relative z-10">
     <div class="text-center mb-6">
       <div class="section-label mb-4 justify-center">Transparent Pricing</div>
-      <h2 class="font-display font-800 text-white text-4xl md:text-5xl mb-4" style="letter-spacing:-0.02em;">
-        No Hidden Fees.<br/><span style="color: var(--electric);">Wholesale Rates Apply.</span>
-      </h2>
-      <div class="flex justify-center mt-4">
-        <div class="pittsburgh-badge">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Pittsburgh Local — Carnegie, PA
-        </div>
-      </div>
+      <h2 class="font-display font-800 text-white text-4xl md:text-5xl mb-4">Wholesale Rates Apply.</h2>
     </div>
 
     <div class="mt-16 mb-4">
       <div class="section-label mb-2">Step 1 — Choose Your Build</div>
-      <h3 class="font-display text-white text-3xl font-700 mb-2">One-Time Website Builds</h3>
-      <p class="text-slate-400 font-body">Your site, built and delivered. Pay once, own forever.</p>
+      <h3 class="font-display text-white text-3xl font-700">One-Time Website Builds</h3>
     </div>
 
     <div class="grid md:grid-cols-3 gap-6 mb-20">
       <div class="glass-card rounded-2xl p-8">
-        <div class="mb-6">
-          <div class="text-xs font-display font-700 tracking-widest uppercase mb-2" style="color: var(--electric);">The Essential</div>
-          <div class="flex items-end gap-1">
-            <span class="strike">$799</span>
-            <span class="font-display text-white text-5xl font-800">$499</span>
-            <span class="text-slate-400 mb-2 font-body">one-time</span>
-          </div>
-          <p class="text-slate-400 text-sm font-body mt-2">Perfect for local businesses getting online fast.</p>
-        </div>
-        <ul class="space-y-2.5 mb-8">
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Single-page landing site</li>
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Mobile-responsive design</li>
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Contact form included</li>
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><strong style="color:white">24-hour launch guarantee</strong></li>
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Google Analytics setup</li>
-        </ul>
-        <a href="#contact" class="btn-secondary w-full py-3 rounded-xl text-sm font-display font-700 inline-flex items-center justify-center gap-2">Get Started — $499</a>
+        <div class="text-xs font-display font-700 uppercase mb-2" style="color: var(--electric);">The Essential</div>
+        <div class="flex items-end gap-1"><span class="strike">$799</span><span class="font-display text-white text-5xl font-800">$499</span></div>
+        <a href="#contact" class="btn-secondary w-full py-3 mt-8 rounded-xl text-sm font-display font-700 flex justify-center">Get Started — $499</a>
       </div>
-
       <div class="glass-card featured rounded-2xl p-8 relative" style="border-top: 2px solid var(--electric);">
-        <div class="flex justify-center mb-5">
-          <div class="pittsburgh-badge" style="background: var(--electric); color: #080c12; border-color: var(--electric); white-space: nowrap;">⭐ Most Popular</div>
-        </div>
-        <div class="mb-6">
-          <div class="text-xs font-display font-700 tracking-widest uppercase mb-2" style="color: var(--electric);">The Growth</div>
-          <div class="flex items-end gap-1">
-            <span class="strike">$1699</span>
-            <span class="font-display text-white text-5xl font-800">$1,199</span>
-            <span class="text-slate-400 mb-2 font-body">one-time</span>
-          </div>
-          <p class="text-slate-400 text-sm font-body mt-2">For serious local businesses ready to grow.</p>
-        </div>
-        <ul class="space-y-2.5 mb-8">
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><strong style="color:white">Up to 5 pages</strong></li>
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Custom SEO setup & metadata</li>
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Google Business integration</li>
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Professional copywriting</li>
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Contact & quote forms</li>
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Schema markup for local SEO</li>
-        </ul>
-        <a href="#contact" class="btn-primary w-full py-3 rounded-xl text-sm font-display font-700 inline-flex items-center justify-center gap-2">Get Started — $1,199</a>
+        <div class="text-xs font-display font-700 uppercase mb-2" style="color: var(--electric);">The Growth</div>
+        <div class="flex items-end gap-1"><span class="strike">$1699</span><span class="font-display text-white text-5xl font-800">$1,199</span></div>
+        <a href="#contact" class="btn-primary w-full py-3 mt-8 rounded-xl text-sm font-display font-700 flex justify-center">Get Started — $1,199</a>
       </div>
-
       <div class="glass-card rounded-2xl p-8">
-        <div class="mb-6">
-          <div class="text-xs font-display font-700 tracking-widest uppercase mb-2" style="color: var(--electric);">The Custom</div>
-          <div class="flex items-end gap-1">
-            <span class="font-display text-white text-4xl font-800">Custom</span>
-          </div>
-          <p class="text-slate-400 text-sm font-body mt-2">Full-scale solutions engineered for your goals.</p>
-        </div>
-        <ul class="space-y-2.5 mb-8">
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Full e-commerce store</li>
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Custom web applications</li>
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Advanced API integrations</li>
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Custom booking/CRM logic</li>
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Priority development timeline</li>
-        </ul>
-        <a href="#contact" class="btn-secondary w-full py-3 rounded-xl text-sm font-display font-700 inline-flex items-center justify-center gap-2">Get a Quote</a>
+        <div class="text-xs font-display font-700 uppercase mb-2" style="color: var(--electric);">The Custom</div>
+        <div class="font-display text-white text-4xl font-800">Custom</div>
+        <a href="#contact" class="btn-secondary w-full py-3 mt-8 rounded-xl text-sm font-display font-700 flex justify-center">Get a Quote</a>
       </div>
     </div>
 
-    <div class="electric-divider mb-20"></div>
-
     <div class="mb-4">
-      <div class="section-label mb-2">Step 2 — Keep It Running</div>
-      <h3 class="font-display text-white text-3xl font-700 mb-2">Monthly Maintenance Plans</h3>
-      <p class="text-slate-400 font-body mb-6">Hosting, security, SSL, and updates — handled every month. Cancel anytime.</p>
+      <div class="section-label mb-2">Step 2 — Monthly Plans</div>
       <div class="flex items-center gap-4">
         <span id="label-monthly" class="font-display text-sm font-600" style="color: var(--electric);">Monthly</span>
         <div class="toggle-track w-14 h-7 rounded-full relative cursor-pointer flex items-center px-1" id="toggle-track">
           <div class="toggle-thumb w-5 h-5 rounded-full" id="toggle-thumb"></div>
         </div>
-        <span id="label-yearly" class="font-display text-sm font-600 text-slate-400">Yearly <span class="text-xs" style="color: var(--electric);">(Save 20%)</span></span>
+        <span id="label-yearly" class="font-display text-sm font-600 text-slate-400">Yearly</span>
       </div>
     </div>
 
     <div class="grid md:grid-cols-3 gap-6 mb-20">
       <div class="glass-card rounded-2xl p-8">
-        <div class="mb-6">
-          <div class="text-xs font-display font-700 tracking-widest uppercase mb-2" style="color: var(--electric);">Basic Maintenance</div>
-          <div class="flex items-end gap-1">
-            <span class="strike">$49</span>
-            <span class="font-display text-white text-5xl font-800" id="price-basic">$39</span>
-            <span class="text-slate-400 mb-2 font-body">/mo</span>
-          </div>
-          <p class="text-slate-400 text-xs font-body mt-1 hidden" id="yearly-basic">Billed $470/year — save $118</p>
-        </div>
-        <ul class="space-y-2.5 mb-8">
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Secure managed hosting</li>
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Free SSL certificate</li>
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Monthly security updates</li>
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Daily automated backups</li>
-        </ul>
-        <a href="#contact" class="btn-secondary w-full py-3 rounded-xl text-sm font-display font-700 inline-flex items-center justify-center gap-2">Subscribe</a>
+        <div class="text-xs font-display font-700 uppercase mb-2" style="color: var(--electric);">Basic</div>
+        <div class="flex items-end gap-1"><span class="strike">$49</span><span class="font-display text-white text-5xl font-800" id="price-basic">$39</span></div>
+        <a href="#contact" class="btn-secondary w-full py-3 mt-8 rounded-xl text-sm font-display flex justify-center">Subscribe</a>
       </div>
-
-      <div class="glass-card featured rounded-2xl p-8 relative" style="border-top: 2px solid var(--electric);">
-        <div class="flex justify-center mb-5">
-          <div class="pittsburgh-badge" style="background: var(--electric); color: #080c12; border-color: var(--electric); white-space: nowrap;">Best Value</div>
-        </div>
-        <div class="mb-6">
-          <div class="text-xs font-display font-700 tracking-widest uppercase mb-2" style="color: var(--electric);">Pro Maintenance</div>
-          <div class="flex items-end gap-1">
-            <span class="strike">$99</span>
-            <span class="font-display text-white text-5xl font-800" id="price-pro">$79</span>
-            <span class="text-slate-400 mb-2 font-body">/mo</span>
-          </div>
-          <p class="text-slate-400 text-xs font-body mt-1 hidden" id="yearly-pro">Billed $950/year — save $238</p>
-        </div>
-        <ul class="space-y-2.5 mb-8">
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Everything in Basic</li>
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><strong style="color:white">2 hrs/mo content updates</strong></li>
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Priority support (24hr response)</li>
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Performance optimization</li>
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Plugin & platform updates</li>
-        </ul>
-        <a href="#contact" class="btn-primary w-full py-3 rounded-xl text-sm font-display font-700 inline-flex items-center justify-center gap-2">Subscribe</a>
+      <div class="glass-card featured rounded-2xl p-8">
+        <div class="text-xs font-display font-700 uppercase mb-2" style="color: var(--electric);">Pro</div>
+        <div class="flex items-end gap-1"><span class="strike">$99</span><span class="font-display text-white text-5xl font-800" id="price-pro">$79</span></div>
+        <a href="#contact" class="btn-primary w-full py-3 mt-8 rounded-xl text-sm font-display flex justify-center">Subscribe</a>
       </div>
-
       <div class="glass-card rounded-2xl p-8">
-        <div class="mb-6">
-          <div class="text-xs font-display font-700 tracking-widest uppercase mb-2" style="color: var(--electric);">Ultimate Maintenance</div>
-          <div class="flex items-end gap-1">
-            <span class="strike">$149</span>
-            <span class="font-display text-white text-5xl font-800" id="price-ultimate">$119</span>
-            <span class="text-slate-400 mb-2 font-body">/mo</span>
-          </div>
-          <p class="text-slate-400 text-xs font-body mt-1 hidden" id="yearly-ultimate">Billed $1,430/year — save $358</p>
-        </div>
-        <ul class="space-y-2.5 mb-8">
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Everything in Pro</li>
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><strong style="color:white">Unlimited small updates</strong></li>
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Monthly SEO health reports</li>
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>24/7 uptime monitoring</li>
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Quarterly strategy call</li>
-        </ul>
-        <a href="#contact" class="btn-secondary w-full py-3 rounded-xl text-sm font-display font-700 inline-flex items-center justify-center gap-2">Subscribe</a>
+        <div class="text-xs font-display font-700 uppercase mb-2" style="color: var(--electric);">Ultimate</div>
+        <div class="flex items-end gap-1"><span class="strike">$149</span><span class="font-display text-white text-5xl font-800" id="price-ultimate">$119</span></div>
+        <a href="#contact" class="btn-secondary w-full py-3 mt-8 rounded-xl text-sm font-display flex justify-center">Subscribe</a>
       </div>
     </div>
 
-    <div class="electric-divider mb-8"></div>
-
     <div class="mb-8">
       <div class="section-label mb-2">Creative Add-Ons</div>
-      <h3 class="font-display text-white text-3xl font-700 mb-2">Graphic Design & Branding</h3>
-      <p class="text-slate-400 font-body">Standalone creative services or bundled with your site build.</p>
+      <h3 class="font-display text-white text-3xl font-700">Graphic Design & Branding</h3>
     </div>
 
     <div class="grid md:grid-cols-3 gap-5">
       <div class="addon-card rounded-xl p-7">
-        <div class="flex items-start gap-4 mb-5">
-          <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background: rgba(46,185,240,0.1); border: 1px solid rgba(46,185,240,0.25);">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><circle cx="11" cy="11" r="2"/></svg>
-          </div>
-          <div>
-            <div class="font-display text-white text-xl font-700">Logo Design</div>
-            <div class="font-display font-800 text-2xl mt-0.5" style="color: var(--electric);">$299</div>
-          </div>
+        <div class="font-display text-white text-xl font-700">Logo Design</div>
+        <div class="font-display font-800 text-2xl mt-1" style="color: var(--electric);">
+          <span class="strike">$299</span>$149
         </div>
-        <ul class="space-y-2 mb-5">
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>3 unique initial concepts</li>
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Professional vector files (SVG/AI)</li>
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Full ownership & rights transfer</li>
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>2 rounds of revisions</li>
-        </ul>
-        <a href="#contact" class="btn-primary w-full py-2.5 rounded-lg text-sm font-display font-700 inline-flex items-center justify-center gap-2">Order Now — $299</a>
+        <a href="#contact" class="btn-primary w-full py-2.5 mt-6 rounded-lg text-sm font-display flex justify-center">Order Now — $149</a>
       </div>
-
       <div class="addon-card rounded-xl p-7">
-        <div class="flex items-start gap-4 mb-5">
-          <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background: rgba(46,185,240,0.1); border: 1px solid rgba(46,185,240,0.25);">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
-          </div>
-          <div>
-            <div class="font-display text-white text-xl font-700">The Identity Pack</div>
-            <div class="font-display font-800 text-2xl mt-0.5" style="color: var(--electric);">$499</div>
-          </div>
+        <div class="font-display text-white text-xl font-700">The Identity Pack</div>
+        <div class="font-display font-800 text-2xl mt-1" style="color: var(--electric);">
+          <span class="strike">$499</span>$249
         </div>
-        <ul class="space-y-2 mb-5">
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Everything in Logo Design</li>
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Business card design (print-ready)</li>
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Letterhead & envelope design</li>
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Brand color & font guide</li>
-        </ul>
-        <a href="#contact" class="btn-primary w-full py-2.5 rounded-lg text-sm font-display font-700 inline-flex items-center justify-center gap-2">Order Now — $499</a>
+        <a href="#contact" class="btn-primary w-full py-2.5 mt-6 rounded-lg text-sm font-display flex justify-center">Order Now — $249</a>
       </div>
-
       <div class="addon-card rounded-xl p-7">
-        <div class="flex items-start gap-4 mb-5">
-          <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background: rgba(46,185,240,0.1); border: 1px solid rgba(46,185,240,0.25);">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
-          </div>
-          <div>
-            <div class="font-display text-white text-xl font-700">Digital Ad Pack</div>
-            <div class="font-display font-800 text-2xl mt-0.5" style="color: var(--electric);">$199</div>
-          </div>
+        <div class="font-display text-white text-xl font-700">Digital Ad Pack</div>
+        <div class="font-display font-800 text-2xl mt-1" style="color: var(--electric);">
+          <span class="strike">$199</span>$109
         </div>
-        <ul class="space-y-2 mb-5">
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>5 high-converting ad graphics</li>
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>TikTok, Facebook & Instagram sizes</li>
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Google Display Ad formats</li>
-          <li class="check-item"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Editable source files delivered</li>
-        </ul>
-        <a href="#contact" class="btn-primary w-full py-2.5 rounded-lg text-sm font-display font-700 inline-flex items-center justify-center gap-2">Order Now — $199</a>
+        <a href="#contact" class="btn-primary w-full py-2.5 mt-6 rounded-lg text-sm font-display flex justify-center">Order Now — $109</a>
       </div>
     </div>
   </div>
 </section>
 
-<div class="electric-divider"></div>
-
 <section id="local" class="py-28 relative overflow-hidden">
-  <div class="blob absolute w-80 h-80 opacity-5 -left-20 top-1/2" style="background: var(--electric);"></div>
   <div class="max-w-7xl mx-auto px-6">
     <div class="grid md:grid-cols-2 gap-16 items-center">
       <div>
-        <div class="pittsburgh-badge mb-6">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Carnegie, PA 15106
-        </div>
-        <h2 class="font-display font-800 text-white text-4xl md:text-5xl mb-6" style="letter-spacing:-0.02em;">
-          The Pittsburgh<br/><span style="color: var(--electric);">Local Advantage</span>
-        </h2>
-        <p class="text-slate-400 font-body text-lg leading-relaxed mb-8">
-          We're not a faceless agency across the country. We're your neighbors — based right here in Carnegie, steps from Pittsburgh. We've eaten at the same restaurants you serve, we shop at the same local businesses, and we understand what it takes to win in the Pittsburgh market.
-        </p>
-        <p class="text-slate-400 font-body text-lg leading-relaxed mb-8">
-          When you hire Nour Digital, you get a dedicated local partner who picks up the phone, shows up when needed, and treats your business like their own.
-        </p>
-        <a href="#contact" class="btn-primary px-7 py-3.5 rounded-xl text-sm inline-flex items-center gap-2">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.72 9.69 19.79 19.79 0 0 1 1.61 1 2 2 0 0 1 3.6 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.339 1.84.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          Talk to a Local Expert
-        </a>
+        <h2 class="font-display font-800 text-white text-4xl md:text-5xl mb-6">The Pittsburgh<br/><span style="color: var(--electric);">Local Advantage</span></h2>
+        <p class="text-slate-400 font-body text-lg mb-8">When you hire Nour Digital, you get a dedicated local partner who picks up the phone, shows up when needed, and treats your business like their own.</p>
+        <a href="#contact" class="btn-primary px-7 py-3.5 rounded-xl text-sm inline-flex items-center gap-2">Talk to a Local Expert</a>
       </div>
-
       <div class="space-y-4">
         <div class="advantage-item rounded-xl">
-          <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background: rgba(46,185,240,0.1);">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          </div>
-          <div>
-            <h4 class="font-display text-white font-700 text-lg mb-1">We Know Your Customers</h4>
-            <p class="text-slate-400 font-body text-sm">Pittsburgh buyers think and search differently. We know exactly how to reach them.</p>
-          </div>
-        </div>
-        <div class="advantage-item rounded-xl">
-          <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background: rgba(46,185,240,0.1);">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.339 1.84.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-            </svg>
-          </div>
-          <div>
-            <h4 class="font-display text-white font-700 text-lg mb-1">Real People, Real Support</h4>
-            <p class="text-slate-400 font-body text-sm">Call or text a real person — not a ticket system. We're in the same timezone and care about your success.</p>
-          </div>
-        </div>
-        <div class="advantage-item rounded-xl">
-          <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background: rgba(46,185,240,0.1);">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-          </div>
-          <div>
-            <h4 class="font-display text-white font-700 text-lg mb-1">Community-First Philosophy</h4>
-            <p class="text-slate-400 font-body text-sm">Your growth is our growth. We're invested in keeping local Pittsburgh businesses thriving.</p>
-          </div>
-        </div>
-        <div class="advantage-item rounded-xl">
-          <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background: rgba(46,185,240,0.1);">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
-          </div>
-          <div>
-            <h4 class="font-display text-white font-700 text-lg mb-1">Local SEO Expertise</h4>
-            <p class="text-slate-400 font-body text-sm">We know Pittsburgh's neighborhoods — Carnegie, Dormont, Mt. Lebanon, Southside. We rank you where it matters.</p>
-          </div>
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background: rgba(46,185,240,0.1);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.339 1.84.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div><h4 class="font-display text-white font-700 text-lg mb-1">Real People, Real Support</h4><p class="text-slate-400 font-body text-sm">Call or text a real person — not a ticket system.</p></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="electric-divider"></div>
-
 <footer id="contact" class="pt-28 pb-12 relative" style="background: rgba(5,8,14,0.95);">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="grid md:grid-cols-2 gap-16 mb-20">
-      <div>
-        <div class="section-label mb-4">Get In Touch</div>
-        <h2 class="font-display font-800 text-white text-4xl md:text-5xl mb-4" style="letter-spacing:-0.02em;">
-          Ready to Build<br/>
-          <span style="color: var(--electric);">Something Great?</span>
-        </h2>
-        <p class="text-slate-400 font-body text-lg leading-relaxed mb-8">
-          Let's talk about your project. We'll respond within one business day — usually much faster.
-        </p>
-
-        <div class="space-y-4">
-          <a href="mailto:hello@nourdigital.com" class="flex items-center gap-3 text-slate-300 hover:text-white transition-colors font-body">
-            <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(46,185,240,0.1); border: 1px solid var(--border);">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </div>
-            hello@nourdigital.com
-          </a>
-          <a href="tel:+14125550123" class="flex items-center gap-3 text-slate-300 hover:text-white transition-colors font-body">
-            <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(46,185,240,0.1); border: 1px solid var(--border);">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.72 9.69 19.79 19.79 0 0 1 1.61 1 2 2 0 0 1 3.6 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.339 1.84.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            </div>
-            (412) 555-0123
-          </a>
-          <div class="flex items-center gap-3 text-slate-400 font-body">
-            <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(46,185,240,0.1); border: 1px solid var(--border);">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2EB9F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            Carnegie, PA 15106 · Pittsburgh Metro
-          </div>
-        </div>
-
-        <div class="flex gap-3 mt-8">
-          <a href="#" aria-label="Facebook" class="w-10 h-10 rounded-lg flex items-center justify-center text-slate-400 hover:text-white transition-all" style="border: 1px solid var(--border);">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-          </a>
-          <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-lg flex items-center justify-center text-slate-400 hover:text-white transition-all" style="border: 1px solid var(--border);">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          </a>
-          <a href="#" aria-label="TikTok" class="w-10 h-10 rounded-lg flex items-center justify-center text-slate-400 hover:text-white transition-all" style="border: 1px solid var(--border);">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.2 8.2 0 0 0 4.79 1.53V6.78a4.85 4.85 0 0 1-1.02-.09z"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <div>
-        <form id="contact-form" class="space-y-4">
-          <div class="grid grid-cols-2 gap-4">
-            <div>
-              <label class="block text-sm text-slate-400 font-body mb-1.5">First Name</label>
-              <input type="text" class="form-input" placeholder="John" required />
-            </div>
-            <div>
-              <label class="block text-sm text-slate-400 font-body mb-1.5">Last Name</label>
-              <input type="text" class="form-input" placeholder="Smith" required />
-            </div>
-          </div>
-          <div>
-            <label class="block text-sm text-slate-400 font-body mb-1.5">Email Address</label>
-            <input type="email" class="form-input" placeholder="john@yourbusiness.com" required />
-          </div>
-          <div>
-            <label class="block text-sm text-slate-400 font-body mb-1.5">Business Name</label>
-            <input type="text" class="form-input" placeholder="Your Business" />
-          </div>
-          <div>
-            <label class="block text-sm text-slate-400 font-body mb-1.5">What do you need?</label>
-            <select class="form-input" style="appearance: none;">
-              <option value="" disabled selected>Select a service...</option>
-              <option>The Essential ($499) — Landing Page</option>
-              <option>The Growth ($1,199) — Full Site</option>
-              <option>Custom Quote — E-commerce or App</option>
-              <option>Monthly Maintenance Plan</option>
-              <option>Logo / Brand Identity</option>
-              <option>Digital Ad Pack</option>
-              <option>Just Exploring Options</option>
-            </select>
-          </div>
-          <div>
-            <label class="block text-sm text-slate-400 font-body mb-1.5">Tell Us About Your Project</label>
-            <textarea class="form-input resize-none" rows="4" placeholder="Describe your business, your goals, and any specific requirements..."></textarea>
-          </div>
-          <button type="submit" class="btn-primary w-full py-4 rounded-xl font-display font-700 text-base inline-flex items-center justify-center gap-2">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-            Send Message — We'll Reply Today
-          </button>
-          <p id="form-success" class="hidden text-center font-body text-sm" style="color: var(--electric);">✓ Message sent! We'll be in touch soon.</p>
-        </form>
-      </div>
-    </div>
-
-    <div class="electric-divider mb-8"></div>
-
-    <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-      <div class="flex items-center gap-2">
-        <div class="w-7 h-7 rounded-lg" style="background: linear-gradient(145deg, #0d1e30 0%, #071520 100%); border: 1px solid rgba(46,185,240,0.35);">
-          <svg width="28" height="28" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="9.5" y="9" width="3" height="18" rx="1.2" fill="url(#nGradLF)"/>
-            <path d="M12.5 9.5 L23.5 26.5" stroke="url(#nGradDF)" stroke-width="2.8" stroke-linecap="round"/>
-            <rect x="23.5" y="9" width="3" height="18" rx="1.2" fill="url(#nGradRF)"/>
-            <circle cx="18" cy="10.5" r="1.4" fill="white" opacity="0.85"/>
-            <defs>
-              <linearGradient id="nGradLF" x1="11" y1="9" x2="11" y2="27" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
-                <stop offset="100%" stop-color="#2EB9F0" stop-opacity="0.8"/>
-              </linearGradient>
-              <linearGradient id="nGradRF" x1="25" y1="9" x2="25" y2="27" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stop-color="#2EB9F0" stop-opacity="0.8"/>
-                <stop offset="100%" stop-color="#ffffff" stop-opacity="0.95"/>
-              </linearGradient>
-              <linearGradient id="nGradDF" x1="12.5" y1="9.5" x2="23.5" y2="26.5" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
-                <stop offset="100%" stop-color="#2EB9F0" stop-opacity="0.75"/>
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
-        <span class="font-display font-700 text-white">Nour<span style="color:var(--electric)">Digital</span></span>
-        <span class="text-slate-600 text-sm font-body">· Carnegie, PA</span>
-      </div>
-      <p class="text-slate-600 text-sm font-body">© 2026 Nour Digital. All rights reserved. · Pittsburgh's Premier Web Studio.</p>
-      <div class="flex gap-6">
-        <button onclick="openModal('privacy-modal')" class="text-slate-600 hover:text-slate-400 text-sm font-body transition-colors" style="background:none;border:none;cursor:pointer;padding:0;">Privacy</button>
-        <button onclick="openModal('terms-modal')" class="text-slate-600 hover:text-slate-400 text-sm font-body transition-colors" style="background:none;border:none;cursor:pointer;padding:0;">Terms</button>
-        <a href="#" class="text-slate-600 hover:text-slate-400 text-sm font-body transition-colors">Sitemap</a>
-      </div>
-    </div>
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <p class="text-slate-600 text-sm font-body">© 2026 Nour Digital. All rights reserved. · Pittsburgh's Premier Web Studio.</p>
   </div>
 </footer>
 
-<div id="privacy-modal" class="legal-modal" onclick="if(event.target===this) closeModal('privacy-modal')">
-  <div class="legal-modal-box">
-    <button class="modal-close-btn" onclick="closeModal('privacy-modal')">✕</button>
-    <h2>Privacy Policy</h2>
-    <p style="color:#2EB9F0; font-size:0.8rem; font-family:'Syne',sans-serif; letter-spacing:0.05em;">Last updated: April 2026</p>
-    <h3>1. Information We Collect</h3>
-    <p>When you fill out our contact form or request a quote, we collect your name, email address, phone number, and business information. We may also collect basic analytics data (pages visited, device type) to improve our website experience.</p>
-    <h3>2. How We Use Your Information</h3>
-    <ul>
-      <li>To respond to your inquiries and deliver the services you requested</li>
-      <li>To send project updates, invoices, and communications related to your account</li>
-      <li>To improve our website and services based on usage patterns</li>
-      <li>We will never sell, rent, or trade your personal information to third parties</li>
-    </ul>
-    <h3>3. Data Storage & Security</h3>
-    <p>Your information is stored securely and protected using industry-standard encryption. We retain your data only as long as necessary to fulfill the purposes outlined in this policy or as required by law.</p>
-    <h3>4. Third-Party Services</h3>
-    <p>We use Stripe for payment processing. Their privacy practices are governed by Stripe's own Privacy Policy. We may use Google Analytics to understand site traffic — this data is anonymized and aggregated.</p>
-    <h3>5. Your Rights</h3>
-    <p>You may request access to, correction of, or deletion of your personal data at any time by contacting us at <span style="color:#2EB9F0">hello@nourdigital.com</span>. We will respond within 30 days.</p>
-    <h3>6. Cookies</h3>
-    <p>Our website may use essential cookies to function properly. No tracking or advertising cookies are used without your consent.</p>
-    <h3>7. Contact Us</h3>
-    <p>Questions about this policy? Reach us at <span style="color:#2EB9F0">hello@nourdigital.com</span> or (412) 555-0123. We're happy to help.</p>
-  </div>
-</div>
-
-<div id="terms-modal" class="legal-modal" onclick="if(event.target===this) closeModal('terms-modal')">
-  <div class="legal-modal-box">
-    <button class="modal-close-btn" onclick="closeModal('terms-modal')">✕</button>
-    <h2>Terms of Service</h2>
-    <p style="color:#2EB9F0; font-size:0.8rem; font-family:'Syne',sans-serif; letter-spacing:0.05em;">Last updated: April 2026</p>
-    <h3>1. Services</h3>
-    <p>Nour Digital provides web design, development, hosting, maintenance, SEO, and graphic design services to clients in the Pittsburgh metro area and beyond. All services are subject to a signed agreement or accepted proposal.</p>
-    <h3>2. Payments</h3>
-    <ul>
-      <li>One-time build fees are due 50% upfront and 50% upon project completion</li>
-      <li>Monthly subscription plans are billed on the same date each month via Stripe</li>
-      <li>Late payments may result in a suspension of services after 14 days</li>
-      <li>All sales are final unless otherwise agreed in writing</li>
-    </ul>
-    <h3>3. Client Responsibilities</h3>
-    <p>Clients are responsible for providing timely feedback, content, and approvals. Project timelines are estimates and may be affected by delays in client response. Clients retain ownership of their original content and grant Nour Digital a license to use it for the project.</p>
-    <h3>4. Intellectual Property</h3>
-    <p>Upon full payment, clients receive full ownership of the final website design and content. Nour Digital retains the right to display completed work in our portfolio unless otherwise agreed.</p>
-    <h3>5. Hosting & Maintenance Plans</h3>
-    <p>Monthly plans may be cancelled with 30 days written notice. Cancellation does not entitle a refund of the current billing period. We reserve the right to suspend accounts with outstanding balances.</p>
-    <h3>6. Limitation of Liability</h3>
-    <p>Nour Digital shall not be liable for indirect, incidental, or consequential damages. Our total liability shall not exceed the amount paid for the specific service in the prior 3 months.</p>
-    <h3>7. Contact</h3>
-    <p>For questions about these terms, contact us at <span style="color:#2EB9F0">hello@nourdigital.com</span> or (412) 555-0123.</p>
-  </div>
-</div>
-
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-
-  // Mobile Menu Logic
   var menuToggle = document.getElementById('menu-toggle');
   var mobileMenu = document.getElementById('mobile-menu');
-  var iconMenu   = document.getElementById('icon-menu');
-  var iconClose  = document.getElementById('icon-close');
   var menuOpen   = false;
-
   if (menuToggle) {
-    menuToggle.addEventListener('click', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
+    menuToggle.addEventListener('click', function () {
       menuOpen = !menuOpen;
       mobileMenu.style.display = menuOpen ? 'block' : 'none';
-      iconMenu.style.display   = menuOpen ? 'none'  : 'block';
-      iconClose.style.display  = menuOpen ? 'block' : 'none';
     });
   }
-
-  document.querySelectorAll('.mobile-nav-link').forEach(function (link) {
-    link.addEventListener('click', function () {
-      menuOpen = false;
-      mobileMenu.style.display = 'none';
-      iconMenu.style.display   = 'block';
-      iconClose.style.display  = 'none';
-    });
-  });
-
-  document.addEventListener('click', function (e) {
-    if (menuOpen && !mobileMenu.contains(e.target) && e.target !== menuToggle && !menuToggle.contains(e.target)) {
-      menuOpen = false;
-      mobileMenu.style.display = 'none';
-      iconMenu.style.display   = 'block';
-      iconClose.style.display  = 'none';
-    }
-  });
-
-  // Rotating Headline Logic
-  var groups = [
-    { id: 'rw-adjective', words: ['High-Performance', 'Conversion-Ready', 'Stunning', 'Future-Proof'] },
-    { id: 'rw-who',       words: ['Local Businesses', 'Restaurants & Shops', 'Service Companies', 'Pittsburgh Brands'] },
-    { id: 'rw-result',    words: ['Win.', 'Convert.', 'Dominate.', 'Grow.'] }
-  ];
-
-  function rotateEl(el, words) {
-    var idx = 0;
-    setInterval(function () {
-      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      el.style.opacity    = '0';
-      el.style.transform  = 'translateY(-12px)';
-      setTimeout(function () {
-        idx = (idx + 1) % words.length;
-        el.textContent     = words[idx];
-        el.style.transition = 'none';
-        el.style.transform  = 'translateY(12px)';
-        void el.offsetHeight;
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        el.style.opacity    = '1';
-        el.style.transform  = 'translateY(0)';
-      }, 600);
-    }, 7000); 
-  }
-
-  groups.forEach(function (g, i) {
-    var el = document.getElementById(g.id);
-    if (!el) return;
-    setTimeout(function () { rotateEl(el, g.words); }, i * 2000);
-  });
-
-  // Pricing Toggle Logic
   var toggleTrack = document.getElementById('toggle-track');
   var isYearly    = false;
   if (toggleTrack) {
     toggleTrack.addEventListener('click', function () {
       isYearly = !isYearly;
-      var thumb        = document.getElementById('toggle-thumb');
-      var labelMonthly = document.getElementById('label-monthly');
-      var labelYearly  = document.getElementById('label-yearly');
-      if (isYearly) {
-        if (thumb)        thumb.style.transform    = 'translateX(28px)';
-        if (labelMonthly) labelMonthly.style.color = '#64748b';
-        if (labelYearly)  labelYearly.style.color  = '#2EB9F0';
-        document.getElementById('price-basic').textContent    = '$29';
-        document.getElementById('price-pro').textContent      = '$59';
-        document.getElementById('price-ultimate').textContent = '$89';
-        document.getElementById('yearly-basic').classList.remove('hidden');
-        document.getElementById('yearly-pro').classList.remove('hidden');
-        document.getElementById('yearly-ultimate').classList.remove('hidden');
-      } else {
-        if (thumb)        thumb.style.transform    = 'translateX(0)';
-        if (labelMonthly) labelMonthly.style.color = '#2EB9F0';
-        if (labelYearly)  labelYearly.style.color  = '#64748b';
-        document.getElementById('price-basic').textContent    = '$39';
-        document.getElementById('price-pro').textContent      = '$79';
-        document.getElementById('price-ultimate').textContent = '$119';
-        document.getElementById('yearly-basic').classList.add('hidden');
-        document.getElementById('yearly-pro').classList.add('hidden');
-        document.getElementById('yearly-ultimate').classList.add('hidden');
-      }
+      var thumb = document.getElementById('toggle-thumb');
+      thumb.style.transform = isYearly ? 'translateX(28px)' : 'translateX(0)';
+      document.getElementById('price-basic').textContent = isYearly ? '$29' : '$39';
+      document.getElementById('price-pro').textContent = isYearly ? '$59' : '$79';
+      document.getElementById('price-ultimate').textContent = isYearly ? '$89' : '$119';
     });
-  }
-
-  // Form Submission Logic
-  var contactForm = document.getElementById('contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var success = document.getElementById('form-success');
-      if (success) {
-        success.classList.remove('hidden');
-        contactForm.reset();
-        setTimeout(function () { success.classList.add('hidden'); }, 5000);
-      }
-    });
-  }
-
-  // Scroll Observer Logic
-  var observer = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity   = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, { threshold: 0.08 });
-
-  document.querySelectorAll('.service-card, .glass-card, .addon-card, .advantage-item').forEach(function (el) {
-    el.style.opacity    = '0';
-    el.style.transform  = 'translateY(24px)';
-    el.style.transition = 'opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1)';
-    observer.observe(el);
-  });
-
-});
-
-// Global Modal Functions
-function openModal(id) {
-  var modal = document.getElementById(id);
-  if (modal) {
-    modal.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-}
-
-function closeModal(id) {
-  var modal = document.getElementById(id);
-  if (modal) {
-    modal.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-}
-
-// Escape key to close modals
-document.addEventListener('keydown', function (e) {
-  if (e.key === 'Escape') {
-    document.querySelectorAll('.legal-modal.open').forEach(function (m) {
-      m.classList.remove('open');
-    });
-    document.body.style.overflow = '';
   }
 });
 </script>
-
 </body>
 </html>
