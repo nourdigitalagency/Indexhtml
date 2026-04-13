@@ -797,46 +797,51 @@
         </div>
       </div>
 
+<div>
+  <form id="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="space-y-4">
+    
+    <p class="hidden">
+      <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+    </p>
+
+    <div class="grid grid-cols-2 gap-4">
       <div>
-        <form id="contact-form" class="space-y-4">
-          <div class="grid grid-cols-2 gap-4">
-            <div>
-              <label class="block text-sm text-slate-400 font-body mb-1.5">First Name</label>
-              <input type="text" class="form-input" placeholder="John" required />
-            </div>
-            <div>
-              <label class="block text-sm text-slate-400 font-body mb-1.5">Last Name</label>
-              <input type="text" class="form-input" placeholder="Smith" required />
-            </div>
-          </div>
-          <div>
-            <label class="block text-sm text-slate-400 font-body mb-1.5">Email Address</label>
-            <input type="email" class="form-input" placeholder="john@yourbusiness.com" required />
-          </div>
-          <div>
-            <label class="block text-sm text-slate-400 font-body mb-1.5">Business Name</label>
-            <input type="text" class="form-input" placeholder="Your Business" />
-          </div>
-          <div>
-            <label class="block text-sm text-slate-400 font-body mb-1.5">What do you need?</label>
-            <select class="form-input" style="appearance: none;">
-              <option value="" disabled selected>Select a service...</option>
-              <option>The Essential ($499) — Landing Page</option>
-              <option>The Growth ($1,199) — Full Site</option>
-              <option>Custom Quote — E-commerce or App</option>
-              <option>Monthly Maintenance Plan</option>
-              <option>Logo / Brand Identity</option>
-              <option>Digital Ad Pack</option>
-              <option>Just Exploring Options</option>
-            </select>
-          </div>
-          <div>
-            <label class="block text-sm text-slate-400 font-body mb-1.5">Tell Us About Your Project</label>
-            <textarea class="form-input resize-none" rows="4" placeholder="Describe your business, your goals, and any specific requirements..."></textarea>
-          </div>
-          <button type="submit" class="btn-primary w-full py-4 rounded-xl font-display font-700 text-base inline-flex items-center justify-center gap-2">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-            Send Message — We'll Reply Today
+        <label class="block text-sm text-slate-400 font-body mb-1.5">First Name</label>
+        <input type="text" name="first_name" class="form-input" placeholder="John" required />
+      </div>
+      <div>
+        <label class="block text-sm text-slate-400 font-body mb-1.5">Last Name</label>
+        <input type="text" name="last_name" class="form-input" placeholder="Smith" required />
+      </div>
+    </div>
+    <div>
+      <label class="block text-sm text-slate-400 font-body mb-1.5">Email Address</label>
+      <input type="email" name="email" class="form-input" placeholder="john@yourbusiness.com" required />
+    </div>
+    <div>
+      <label class="block text-sm text-slate-400 font-body mb-1.5">Business Name</label>
+      <input type="text" name="business_name" class="form-input" placeholder="Your Business" />
+    </div>
+    <div>
+      <label class="block text-sm text-slate-400 font-body mb-1.5">What do you need?</label>
+      <select name="service_requested" class="form-input" style="appearance: none;">
+        <option value="" disabled selected>Select a service...</option>
+        <option value="essential">The Essential ($499) — Landing Page</option>
+        <option value="growth">The Growth ($1,199) — Full Site</option>
+        <option value="custom">Custom Quote — E-commerce or App</option>
+        <option value="maintenance">Monthly Maintenance Plan</option>
+        <option value="logo">Logo / Brand Identity</option>
+        <option value="ads">Digital Ad Pack</option>
+        <option value="exploring">Just Exploring Options</option>
+      </select>
+    </div>
+    <div>
+      <label class="block text-sm text-slate-400 font-body mb-1.5">Tell Us About Your Project</label>
+      <textarea name="project_details" class="form-input resize-none" rows="4" placeholder="Describe your business, your goals, and any specific requirements..."></textarea>
+    </div>
+    <button type="submit" class="btn-primary w-full py-4 rounded-xl font-display font-700 text-base inline-flex items-center justify-center gap-2">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      Send Message — We'll Reply Today
           </button>
           <p id="form-success" class="hidden text-center font-body text-sm" style="color: var(--electric);">✓ Message sent! We'll be in touch soon.</p>
         </form>
