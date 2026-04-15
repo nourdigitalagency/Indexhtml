@@ -1045,16 +1045,31 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  var contactForm = document.getElementById('contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
+    const nourForm = document.getElementById('nour-contact');
+  const successMessage = document.getElementById('form-success');
+  const btnText = document.getElementById('btn-text');
+
+  if (nourForm) {
+    nourForm.addEventListener('submit', function (e) {
       e.preventDefault();
-      var success = document.getElementById('form-success');
-      if (success) {
-        success.classList.remove('hidden');
-        contactForm.reset();
-        setTimeout(function () { success.classList.add('hidden'); }, 5000);
-      }
+      
+      if (btnText) btnText.innerText = "Sending...";
+
+      const formData = new FormData(nourForm);
+
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+      })
+      .then(function() {
+        nourForm.reset();
+        if (btnText) btnText.innerText = "Message Sent!";
+        if (successMessage) successMessage.classList.remove('hidden');
+      })
+      .catch(function(error) {
+        alert("Oops! Please email us directly at nourdigital.agency@gmail.com");
+      });
     });
   }
 
