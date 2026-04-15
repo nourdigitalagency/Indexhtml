@@ -851,9 +851,9 @@
   </form>
 </div>
 
-    <div class="electric-divider mb-8"></div>
+        <div class="electric-divider mb-4"></div>
 
-    <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-3 mt-2">
       <div class="flex items-center gap-2">
         <div class="w-7 h-7 rounded-lg" style="background: linear-gradient(145deg, #0d1e30 0%, #071520 100%); border: 1px solid rgba(46,185,240,0.35);">
           <svg width="28" height="28" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -878,16 +878,16 @@
           </svg>
         </div>
         <span class="font-display font-700 text-white">Nour<span style="color:var(--electric)">Digital</span></span>
-        <span class="text-slate-600 text-sm font-body">· Carnegie, PA</span>
+        <span class="text-slate-600 text-xs font-body">· Carnegie, PA</span>
       </div>
-      <p class="text-slate-600 text-sm font-body">© 2026 Nour Digital. All rights reserved. · Pittsburgh's Premier Web Studio.</p>
-      <div class="flex gap-6">
-        <button onclick="openModal('privacy-modal')" class="text-slate-600 hover:text-slate-400 text-sm font-body transition-colors" style="background:none;border:none;cursor:pointer;padding:0;">Privacy</button>
-        <button onclick="openModal('terms-modal')" class="text-slate-600 hover:text-slate-400 text-sm font-body transition-colors" style="background:none;border:none;cursor:pointer;padding:0;">Terms</button>
-        <a href="#" class="text-slate-600 hover:text-slate-400 text-sm font-body transition-colors">Sitemap</a>
+      
+      <p class="text-slate-600 text-[11px] md:text-sm font-body text-center">© 2026 Nour Digital. All rights reserved.</p>
+      
+      <div class="flex gap-4">
+        <button onclick="openModal('privacy-modal')" class="text-slate-600 hover:text-slate-400 text-xs font-body transition-colors" style="background:none;border:none;cursor:pointer;padding:0;">Privacy</button>
+        <button onclick="openModal('terms-modal')" class="text-slate-600 hover:text-slate-400 text-xs font-body transition-colors" style="background:none;border:none;cursor:pointer;padding:0;">Terms</button>
+        <a href="#" class="text-slate-600 hover:text-slate-400 text-xs font-body transition-colors">Sitemap</a>
       </div>
-    </div>
-  </div>
 </footer>
 
 <div id="privacy-modal" class="legal-modal" onclick="if(event.target===this) closeModal('privacy-modal')">
